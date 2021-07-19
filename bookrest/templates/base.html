@@ -1,20 +1,61 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <link rel="icon" type="image⁄x-icon" href="{% static 'img/logo.png '%}" />
+    <link rel="stylesheet" href="{% static 'css/base.css '%}"">
     <title>BOOKREST</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- 네브바만 상속 받으면 될 것 같아요 그쵸?-->
     <div class="nav">
+    
+      <div class="nav__logo">
+        <h1>
+          <a href="{% url 'main' %}">BOOKREST</a>
+        </h1>
+      </div>
 
+      <div class="nav__menu">
+        <a
+          class="nav__menu__link js-nav__menu__link"
+          href="{% url 'mypage' %}"
+          data-path="/join/mypage"
+          >Mypage</a
+        >
+        <a
+          class="nav__menu__link js-nav__menu__link"
+          href="{% url 'sign_up' %}"
+          data-path="/join/sign_up"
+          >Signup</a
+        >
+        <a
+          class="nav__menu__link js-nav__menu__link"
+          href="{% url 'sign_in' %}"
+          data-path="/join/sign_in"
+          >Signin</a
+        >
+        <a class="nav__menu__link js-nav__menu__link" href="#">Notice</a>
+        <a
+          class="nav__menu__link js-nav__menu__link"
+          href="{% url 'category' %}"
+          data-path="/category/"
+          >Category</a
+        >
+        <a
+          class="nav__menu__link js-nav__menu__link"
+          href="{% url 'vote' %}"
+          data-path="/vote/"
+          >Vote</a
+        >
+      </div>
     </div>
 
-    {% block content %}
-    {% endblock %}
-   
+    {% block content %} {% endblock %}
+
     <!-- 푸터도 한다면 여기다 푸터하면 돼용 -->
-</body>
+
+    <script src="{% static 'js/nav.js '%}"></script>
+  </body>
 </html>

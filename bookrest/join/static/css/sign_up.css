@@ -1,0 +1,147 @@
+.signupBoxTool {
+  display: flex;
+  justify-content: center;
+}
+
+.signupBoxTool__signupBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+  height: 550px;
+  margin: 45px;
+  border: 3px solid #000;
+  padding: 20px 0px 20px 25px;
+  box-shadow: 9px 9px 0 #bdccd4;
+}
+
+.signupBoxTool__signupBox__title > h5 {
+  all: unset;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+}
+.signupBoxTool__signupBox__form-control__nameMajor {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+  margin-right: 15px;
+}
+
+.signupBoxTool__signupBox__form-control {
+  margin-top: 5px;
+}
+
+.signupBoxTool__signupBox__form-control__title{
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.signupBoxTool__signupBox__form-control__title > span,
+.signupBoxTool__signupBox__rule > h4{
+    all: unset;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.name,
+.major,
+.studentID,
+.email,
+.password,
+.phoneNumber {
+  all: unset;
+  background: #f0f3f5 !important;
+  border: 1px solid #adadad !important;
+  position: relative;
+  width: 500px;
+  height: 36px;
+  z-index: 4;
+  border-radius: 4px;
+  padding: 2px;
+  opacity: 0.8;
+  font-weight: 400;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.name,
+.major {
+  width: 220px;
+  height: 34px;
+}
+
+.input:valid {
+  padding-left: 20px;
+}
+
+input::placeholder {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  color: rgb(140, 140, 140);
+}
+
+.signupBoxTool__signupBox__form-control small {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #e86a05;
+  letter-spacing: 0.2px;
+  font-size: 12px;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.signupBoxTool__signupBox__form-control.error input {
+  border-bottom: 1px solid #e86a05;
+}
+.signupBoxTool__signupBox__form-control.error small {
+  visibility: visible;
+}
+
+.signupBoxTool__signupBox__form-control.success input {
+  background-color: rgb(69, 69, 69);
+}
+
+
+.signupBoxTool__signupBox__rule{
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+   
+}
+
+.signupBoxTool__signupBox__rule > h4 >a{
+    all: unset;
+    color:#2DBE61;
+    font-weight: 600;
+}
+
+.signupBoxTool__signupBox__rule > h4 >a:hover{
+    cursor: pointer;
+}
+
+
+button{
+    all: unset;
+    width: 167px;
+    height: 50px;
+    margin-left: 8%;
+    background-color: #2dbe61;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    opacity: 0.8;
+    font-family: "Noto Sans KR", sans-serif;
+
+    font-weight: 500;
+}
+
+
+button:hover{
+    cursor: pointer;
+    color: black;
+    transition: all 0.3s;
+
+}
