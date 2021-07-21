@@ -37,7 +37,7 @@ class UserCreationForm(forms.ModelForm):
             }
         )
     )
-    username = forms.CharField(
+    name = forms.CharField(
         label=_('이름'),
         required=True,
         widget=forms.TextInput(
@@ -84,7 +84,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser
-        fields = ('email','username','department','student_id','birth')
+        fields = ('email','name','department','student_id','birth')
 
     def clean_password2(self):
         # 두 비밀번호 입력 일치 확인
@@ -112,7 +112,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser
-        fields = ('email','password','username','department','student_id','birth','is_active','is_superuser')
+        fields = ('email','password','name','department','student_id','birth','is_active','is_superuser')
 
     def clean_password(self):
         # Regardless of what the user provides, return the initial value.
