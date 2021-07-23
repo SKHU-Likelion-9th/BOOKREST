@@ -52,20 +52,20 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         max_length=10,
         blank=True
     )
-   
+    #user_id = models.BigIntegerField(primary_key=True,null=False)
     email = models.EmailField(max_length=255, unique=True)
-    name = models.CharField(max_length=20,unique=True)
+    name = models.CharField(max_length=20)
     major = models.CharField(choices=MAJOR, max_length=30,null=True)
     phone_number = models.CharField(max_length=20,null=True)
-    birth = models.DateField('birth', null=True)
+    birth = models.DateField('birth',null=True)
     student_id = models.CharField(max_length=20,null=True)
     #no_borrow_period
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'name'    
-    REQUIRED_FIELDS = ['email',]
+    USERNAME_FIELD = 'email'    
+    REQUIRED_FIELDS = []
 
     def __str__(self):
         return self.name

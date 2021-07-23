@@ -11,7 +11,7 @@ class UserCreationForm(forms.ModelForm):
         widget=forms.EmailInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': ('Email address'),
+                'placeholder': ('이메일 주소'),
                 'required': 'True',
             }
         )
@@ -21,7 +21,7 @@ class UserCreationForm(forms.ModelForm):
         widget=forms.PasswordInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': ('Password'),
+                'placeholder': ('비밀번호'),
                 'required': 'True',
             }
         )
@@ -36,67 +36,67 @@ class UserCreationForm(forms.ModelForm):
             }
         )
     )
-    name = forms.CharField(
-        label=('이름'),
-        required=True,
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': ('이름 입력'),
-                'required': 'True',
-            }
-        )
-    )
-    phone_number = forms.CharField(
-        label=('전화번호'),
-        required=True,
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': ('010-XXXX-XXXX로 작성'),
-                #'required': 'True',
-            }
-        )
-    )
-    birth = forms.DateField(
-        label=('생년월일'),
-        required=True,
-        widget=forms.DateInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': ('생년월일'),
-                #'required': 'True',
-            }
-        )
-    )
-    major = forms.ChoiceField(
-        label=('학과'),
-        required=True,
-        choices=MAJOR,
-        widget=forms.RadioSelect(
-            attrs={
-                'class': 'form-control',
-                'placeholder': ('학과'),
-                #'required': 'True',
-            }
-        )
-    )
-    student_id  = forms.CharField(
-        label=('학번'),
-        required=True,
+    # name = forms.CharField(
+    #     label=('이름'),
+    #     required=True,
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'class': 'form-control',
+    #             'placeholder': ('이름 입력'),
+    #             'required': 'True',
+    #         }
+    #     )
+    # )
+    # phone_number = forms.CharField(
+    #     label=('전화번호'),
+    #     required=True,
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'class': 'form-control',
+    #             'placeholder': ('010-XXXX-XXXX로 작성'),
+    #             #'required': 'True',
+    #         }
+    #     )
+    # )
+    # birth = forms.DateField(
+    #     label=('생년월일'),
+    #     required=True,
+    #     widget=forms.DateInput(
+    #         attrs={
+    #             'class': 'form-control',
+    #             'placeholder': ('생년월일'),
+    #             'required': 'True',
+    #         }
+    #     )
+    # )
+    # major = forms.ChoiceField(
+    #     label=('학과'),
+    #     required=True,
+    #     choices=MAJOR,
+    #     widget=forms.RadioSelect(
+    #         attrs={
+    #             'class': 'form-control',
+    #             'placeholder': ('학과'),
+    #             'required': 'True',
+    #         }
+    #     )
+    # )
+    # student_id  = forms.CharField(
+    #     label=('학번'),
+    #     required=True,
         
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': ('ex) 201810102'),
-                #'required': 'True',
-            }
-        )
-    )
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'class': 'form-control',
+    #             'placeholder': ('ex) 201810102'),
+    #             'required': 'True',
+    #         }
+    #     )
+    # )
 
     class Meta:
         model = CustomUser
-        fields = ('email','name','major','student_id','birth','phone_number')
+        fields = ('email',)
 
     def clean_password2(self):
         # 두 비밀번호 입력 일치 확인
@@ -124,7 +124,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser
-        fields = ('email','password','name','major','student_id','birth','phone_number','is_active','is_superuser')
+        fields = ('email','password',)
 
     def clean_password(self):
         # Regardless of what the user provides, return the initial value.
