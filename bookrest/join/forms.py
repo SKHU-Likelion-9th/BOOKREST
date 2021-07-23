@@ -1,96 +1,95 @@
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from django.utils.translation import ugettext_lazy as _
 
 from .models import CustomUser, UserManager
 from .choices import *
 class UserCreationForm(forms.ModelForm):
     # 사용자 생성 폼
     email = forms.EmailField(
-        label=_('이메일'),
+        label=('이메일'),
         required=True,
         widget=forms.EmailInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': _('Email address'),
+                'placeholder': ('Email address'),
                 'required': 'True',
             }
         )
     )
     password1 = forms.CharField(
-        label=_('비밀번호'),
+        label=('비밀번호'),
         widget=forms.PasswordInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': _('Password'),
+                'placeholder': ('Password'),
                 'required': 'True',
             }
         )
     )
     password2 = forms.CharField(
-        label=_('비밀번호 확인'),
+        label=('비밀번호 확인'),
         widget=forms.PasswordInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': _('비밀번호 확인'),
+                'placeholder': ('비밀번호 확인'),
                 'required': 'True',
             }
         )
     )
     name = forms.CharField(
-        label=_('이름'),
+        label=('이름'),
         required=True,
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': _('이름 입력'),
+                'placeholder': ('이름 입력'),
                 'required': 'True',
             }
         )
     )
     phone_number = forms.CharField(
-        label=_('전화번호'),
+        label=('전화번호'),
         required=True,
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': _('010-XXXX-XXXX로 작성'),
-                'required': 'True',
+                'placeholder': ('010-XXXX-XXXX로 작성'),
+                #'required': 'True',
             }
         )
     )
     birth = forms.DateField(
-        label=_('생년월일'),
+        label=('생년월일'),
         required=True,
-        widget=forms.TextInput(
+        widget=forms.DateInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': _('생년월일'),
-                'required': 'True',
+                'placeholder': ('생년월일'),
+                #'required': 'True',
             }
         )
     )
     major = forms.ChoiceField(
-        label=_('학과'),
+        label=('학과'),
         required=True,
         choices=MAJOR,
-        widget=forms.TextInput(
+        widget=forms.RadioSelect(
             attrs={
                 'class': 'form-control',
-                'placeholder': _('학과'),
-                'required': 'True',
+                'placeholder': ('학과'),
+                #'required': 'True',
             }
         )
     )
     student_id  = forms.CharField(
-        label=_('학번'),
+        label=('학번'),
         required=True,
         
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': _('학번'),
-                'required': 'True',
+                'placeholder': ('ex) 201810102'),
+                #'required': 'True',
             }
         )
     )
@@ -120,7 +119,7 @@ class UserCreationForm(forms.ModelForm):
 class UserChangeForm(forms.ModelForm):
     # 비밀번호 변경 폼
     password = ReadOnlyPasswordHashField(
-        label=_('Password')
+        label=('Password')
     )
 
     class Meta:

@@ -14,14 +14,14 @@ class UserAdmin(BaseUserAdmin):
     #admin에서 수정할 때 보이는 필드들
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('name', 'major', 'student_id','birth', 'phone_number', )}),
+        ('Student info', {'fields': ('name', 'major', 'student_id','birth', 'phone_number', )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', )}),
     )
     #admin에서 유저모델 추가할 때 보이는 필드들
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ( 'name', 'email', 'password1', 'password2',)
+            'fields': ( 'email', 'name', 'password1', 'password2', 'major', 'student_id','birth', 'phone_number',)
         }),
     )
     search_fields = ('departement','student_id')
