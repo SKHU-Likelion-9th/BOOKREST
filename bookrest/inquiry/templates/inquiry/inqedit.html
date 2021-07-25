@@ -1,0 +1,8 @@
+글 수정 페이지
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <button type="submit">수정하기</button>
+</form>

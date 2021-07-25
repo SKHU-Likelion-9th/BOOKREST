@@ -2,7 +2,16 @@
 {% load static %} 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/inquiry.css '%}">
-Q&A 페이지
-
-
+<h1>Q&A 페이지</h1>
+<br>
+<a href="{% url 'ask' %}">문의하기</a>
+<br>
+<a href="{% url 'answer' %}">관리자용 댓글 달기 페이지</a>
+<hr>
+<h2>문의 글 목록</h2>
+{% for inquiry in inquirys.all %}
+<p>{{inquiry.id}}.</p>
+<p><a href="{% url 'inqdetail' inquiry.id %}">{{inquiry.title}}</a></p>
+<p>{{inquiry.pub_date}}</p>
+{% endfor %}
 {% endblock %}

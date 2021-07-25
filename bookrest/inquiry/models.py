@@ -10,7 +10,7 @@ class QInquiry(models.Model):
     phone_number = models.CharField(max_length=20)
     email = models.EmailField(max_length=100)
     #문의 내용
-    qtype = models.ManyToManyField('qtype', blank=False)
+    qtype = models.ManyToManyField('Qtype', blank=False)
     title = models.CharField(max_length=200)
     body = models.TextField()
     #기타

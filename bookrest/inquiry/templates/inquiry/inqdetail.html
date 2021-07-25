@@ -1,1 +1,16 @@
-register : inquiry detail 페이지
+<h1>register : inquiry detail 페이지</h1>
+<hr>
+<h2>{{inquiry.title}}</h2>
+<p>작성자 : <b>{{inquiry.last_name}} {{inquiry.first_name}}</b></p>
+<br>
+<p>작성 시간 : {{inquiry.pub_date}}</p>
+{% for qtype in inquiry.qtype.all %}
+<p>문의 유형 : {{qtype.type}}</p>
+{% endfor %}
+<p>작성 내용 : {{inquiry.body}}</p>
+<a href="{% url 'inqedit' inquiry.id %}">수정하기</a>
+<a href="{% url 'inqdelete' inquiry.id %}">삭제하기</a>
+<hr>
+{% for answer in answer.all %}
+<p>{{answer.text}}</p>
+{% endfor %}
