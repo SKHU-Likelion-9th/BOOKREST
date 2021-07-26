@@ -11,6 +11,6 @@
 <a href="{% url 'inqedit' inquiry.id %}">수정하기</a>
 <a href="{% url 'inqdelete' inquiry.id %}">삭제하기</a>
 <hr>
-{% for answer in answer.all %}
+{% for answer in inquiry.answer.all %}
 <p>{{answer.text}}</p>
 {% endfor %}

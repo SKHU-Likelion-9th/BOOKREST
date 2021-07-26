@@ -15,7 +15,7 @@
 {% for answer in inquiry.answer.all %}
 <p>{{answer.text}}</p>
 {% endfor %}
-<form method="POST" action="{% url 'ansdetail' inquiry.id %}">
+<form method="POST">
     {% csrf_token %}
     <p>{{form.as_p}}</p>
     <input type="submit" value="답변작성">

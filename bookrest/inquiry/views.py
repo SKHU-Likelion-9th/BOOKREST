@@ -29,8 +29,7 @@ def ask(request):
 #작성 글 자세히 보기
 def inqdetail(request, id):
     inquiry = get_object_or_404(QInquiry, id = id)
-    answer = Answer.objects
-    return render(request, 'inquiry/inqdetail.html', {'inquiry':inquiry, 'answer':answer})
+    return render(request, 'inquiry/inqdetail.html', {'inquiry':inquiry})
 
 #작성 글 수정하기
 def inqedit(request, id):
