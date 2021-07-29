@@ -5,11 +5,10 @@ from .choices import *
 
 class UserCreationForm(UserCreationForm):
     email = forms.EmailField(max_length=60)
-    birth = forms.DateField()
     # 사용자 생성 폼
     class Meta:
         model = CustomUser
-        fields = ("email", "password1", "password2", "username", "major", "student_id", "birth", "phone_number")
+        fields = ("email", "password1", "password2", "username", "major", "student_id", "phone_number")
 
     # def clean_password2(self):
     #     # 두 비밀번호 입력 일치 확인
