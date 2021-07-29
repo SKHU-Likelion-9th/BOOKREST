@@ -9,12 +9,12 @@ class UserAdmin(BaseUserAdmin):
     add_form = UserCreationForm #생성
  
     #admin에서 어떤 필드 보여줄지 
-    list_display = ('name', 'major', 'student_id','is_staff')
+    list_display = ('username', 'major', 'student_id','is_staff')
     list_filter = ('is_superuser','is_active')
     #admin에서 수정할 때 보이는 필드들
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Student info', {'fields': ( 'name','major', 'student_id', )}),
+        ('Student info', {'fields': ( 'username','major', 'student_id', )}),
         ('Person info', {'fields': ('birth', 'phone_number',)}),
         ('Permissions', {'fields': ('is_active', 'is_staff', )}),
     )
