@@ -1,10 +1,24 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/vote.css '%}">
 
 <h1>이달의 페이지</h1>
-
+<hr>
+<h3>어드민한테만 보이게 하기!</h3>
+<a href="{% url 'addvote' %}">투표 등록</a>
+<hr>
+<h3>투표 중!</h3>
+{% for booklist in booklists.all %}
+<div style="display: inline-block;">
+    <p>책 이름 : {{booklist.book_name}}</p>
+    <p>투표 수 {{booklist.votes}}</p>
+    {% csrf_token %}
+    <form action="{% url 'vote' vote.id %}" method="POST">
+        <button name="votes" value="{{booklist.id}}">투표</button>
+    </form>
+</div>
+{% endfor %}
 
 {% endblock %}
