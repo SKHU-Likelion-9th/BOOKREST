@@ -2,7 +2,7 @@ const container__slider = document.querySelector(".container__slider");
 const firstSlide = document.querySelector(".js-container__slider__img");
 
 const SHOWING_CN = 'slider_showing';
-const IMG_NUM = 3;
+const IMG_NUM = 2;
 
 const changeSlide = () => {
     const currentSlide = container__slider.querySelector(`.${SHOWING_CN}`);

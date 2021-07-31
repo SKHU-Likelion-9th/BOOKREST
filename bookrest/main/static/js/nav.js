@@ -6,7 +6,6 @@ const compareCurrentPath = () => {
   navLinks.forEach((navLink) => {
     if (currentPath === navLink.dataset.path) {
         navLink.classList.add(ANIMATE_CN);
-
     }
   });
 };

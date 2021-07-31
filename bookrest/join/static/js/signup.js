@@ -4,12 +4,12 @@ const major = document.querySelector(".major");
 const studentID = document.querySelector(".studentID");
 const email = document.querySelector(".email");
 const password = document.querySelector(".password");
+const password2 = document.querySelector(".password2");
 const phoneNumber = document.querySelector(".phoneNumber");
 const checkbox = document.querySelector(".checkbox");
 const checkboxErrorMsg = document.querySelector(".js-checkboxErrorMsg");
 
 const handleCheckboxForm = () => {
-  console.log("혜성이뚱떙이");
   if (!checkbox.checked) {
     checkboxError(`이용규정에 동의해주세요`);
   } else {
@@ -52,6 +52,24 @@ const checkstudentID = () => {
   }
 };
 
+const checkPassword2 = () => {
+  const input1 = password.value;
+  const input2 = password2.value;
+
+  if (password2.value.length === 0) {
+    errorRed(password2, `비밀번호 확인은 필수 항목입니다.`);
+  } else if (input1 === input2) {
+    // 비밀번호가 이전이랑 똑같다면
+    successLight(password2);
+  } else {
+    // 비밀번호가 이전이랑 다르다면
+    errorRed(
+      password2,
+      `비밀번호가 일치하지 않습니다`
+    );
+  }
+};
+
 const checkPassword = () => {
   if (password.value.length >= 6) {
     successLight(password);
@@ -84,6 +102,7 @@ const signInit = () => {
   name.addEventListener("input", loadName);
   email.addEventListener("input", checkEmail);
   password.addEventListener("input", checkPassword);
+  password2.addEventListener("input", checkPassword2);
   studentID.addEventListener("input", checkstudentID);
   checkbox.addEventListener("change", handleCheckboxForm);
 
@@ -93,6 +112,7 @@ const signInit = () => {
     loadName();
     checkEmail(email);
     checkstudentID(studentID);
+    checkPassword2(password, password2);
     handleCheckboxForm();
   });
 };

@@ -10,41 +10,37 @@
 //         console.log("하이하이")
 //         animationTarget.classList.add(ANIMATE_CN);
 //     }
-    
+
 //     if ((currentWindowHeight /2) > animationRectTop1) {
 //         console.log("하이하이")
 //         animationTarget1.classList.add(ANIMATE_CN);
 //     }
-   
+
 // };
-    
+
 // const init = () => {
 //     window.addEventListener("scroll", handleScroll);
 // };
 
 // init();
 
+const animationTarget = document.querySelectorAll(".js-scroll");
+const SCROLLANIMATE_CN = "scroll--animate";
 
-// const animationTarget = document.querySelectorAll(".js-scroll");
-// const ANIMATE_CN = "scroll--animate";
+const handleScroll = () => {
+    for (let item of animationTarget) {
+        const itemYpos = item.getBoundingClientRect().top;
+        const detectRatio = window.innerHeight * 0.5;
 
-// const handleScroll = () => {
-//     for(let item of animationTarget){
-//         const itemYpos = item.getBoundingClientRect().top;
-//         const detectRatic = window.innerHeight*0.5;
+        console.log(itemYpos);
+        if (itemYpos < detectRatio) {
+            item.classList.add(SCROLLANIMATE_CN);
+        }
+    }
+};
 
-//         if (itemYpos < detectRatic){
-//             item.classList.add(ANIMATE_CN)
-//         }else{
-//             break;
-//         }
-//     } 
-// };
-    
-// const init = () => {
-//     window.addEventListener("scroll", handleScroll);
-// };
+const scrollInit = () => {
+    window.addEventListener("scroll", handleScroll);
+};
 
-// init();
-
-
+scrollInit();
