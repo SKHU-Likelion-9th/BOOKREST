@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 html, body{
     width: 100vw;
@@ -7,7 +7,7 @@ html, body{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,7 +96,7 @@ a{
    flex-direction: column;
    padding: 10px;
    border: 3px solid #000000;
-   box-shadow: 10px 10px #2DBE61;
+   box-shadow: 9px 9px 0 #bdccd4; 
  }
 
  .book > .title > h2{
@@ -140,6 +140,11 @@ a{
  /*숫자를 넣어서 그런가 book card에서 공백이 혼자 달라서 강제 높이 적용*/
  .book_card_column > .book_date{
    height: 21px;
+ }
+
+ .title > hr{
+  height:1px;
+  background-color: #000000;
  }
 
  .column_title {
