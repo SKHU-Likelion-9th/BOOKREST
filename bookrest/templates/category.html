@@ -4,5 +4,10 @@
 <link rel="stylesheet" href="{% static 'css/category.css '%}">
 <h1>카테고리 페이지</h1>
 
+{% for book in major_미컨.all %}
+    <p>{{ book.title }}</p>
+    <p>{{ book.department }}</p>
+    <hr>
+{% endfor %}
 
 {% endblock %}
