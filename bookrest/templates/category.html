@@ -18,24 +18,25 @@
             <div class="button_item"><button>검색</button></div>
         </div>
 
+        {% for title in bookclassinfo.title.all %}
         <div class="book_list">
 
             <div class="book">
                 <div class="title">
-                    <h2>{{ bookclassinfo.title }}</h2>
+                    <h2>{{ bookclassinfo.title }}점프 투 파이썬</h2>
                     <hr>
                 </div>
                 <div class="book_card">
                     <img src="{% static 'img/pythonbook.jpg '%}"/>
                     <div class="book_card_column">
                         <span class="book_category">
-                            <h4 class="column_title">카테고리</h4>&ensp;{{ bookclassinfo.department }}
+                            <h4 class="column_title">카테고리</h4>&ensp;{{ bookclassinfo.department }}IT
                         </span>
                         <span class="book_publisher">
-                            <h4 class="column_title">출판사</h4>&ensp;{{ bookclassinfo.publisher }}
+                            <h4 class="column_title">출판사</h4>&ensp;{{ bookclassinfo.publisher }}이지퍼블리싱
                         </span>
                         <span class="book_date">
-                            <h4 class="column_title">재고</h4>&ensp;{{ bookclassinfo.stock }}
+                            <h4 class="column_title">재고</h4>&ensp;{{ bookclassinfo.stock }}5권
                         </span>
                         <span class="book_button">
                             <button><a href="../detail">대여하기</a></button>
@@ -43,10 +44,6 @@
                     </div>
                 </div>
             </div>
-
-
-            
-
         </div>
     
     

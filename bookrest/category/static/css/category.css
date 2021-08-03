@@ -127,19 +127,15 @@ a{
  }
 
  .book_card_column > span{
-   margin-top: 5px;
+   margin-top: 17px;
  }
 
  /*book card에서 카테고리 부분은 띄우지 않기 위함*/
  .book_card_column > .book_category{
-   margin-top: 0px;
+   margin-top: 5px;
  }
  .book_card_column > .book_button{
    margin-top: 0px;
- }
- /*숫자를 넣어서 그런가 book card에서 공백이 혼자 달라서 강제 높이 적용*/
- .book_card_column > .book_date{
-   height: 21px;
  }
 
  .title > hr{
@@ -154,15 +150,15 @@ a{
  }
 
  .book_card_column > .book_button > button{
-   width: 100%;
+  margin-top: 14px; 
+  width: 100%;
    height: 100%;
    background: #808080;
    color: #ffffff;
    border: none;
    outline: none;
-   height: 27px;
+   height: 32px;
    width: 80px;
-   float: right;
  }
 
  .book_card_column > .book_button > :hover{
