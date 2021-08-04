@@ -6,6 +6,7 @@ from django.db.models.base import Model
 from datetime import date, timedelta
 from django.conf import settings
 from join.choices import *
+import django_filters
 
 # Create your models here.
 
@@ -29,6 +30,7 @@ class BookClassInfo(models.Model):
 
     def __str__(self):
         return "{} - {}".format(self.title,self.class_name)
+
 
 #물리적인 책 각각의 상태
 class BookWhere(models.Model):
