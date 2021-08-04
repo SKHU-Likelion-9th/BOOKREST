@@ -2,15 +2,17 @@
 {% load static %} 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/category.css '%}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
 <h1>카테고리 페이지</h1>
     <div class="category">
         
         <div class="category_nav">
-            <div class="item">전체보기</div>
-            <div class="item">인문</div>
-            <div class="item">사회</div>
-            <div class="item">미컨</div>
-            <div class="item">IT</div>
+            <div class="item" id="1"><button id="get_all">전체보기</button></div>
+            <div class="item" id="2"><button id="get_humanities">인문</button></div>
+            <div class="item" id="3"><button id="get_society">사회</button></div>
+            <div class="item" id="4"><button id="get_media_content">미컨</button></div>
+            <div class="item" id="5"><button id="get_it">IT</button></div>
         </div>    
     
         <div class="category_search">
@@ -18,12 +20,41 @@
             <div class="button_item"><button>검색</button></div>
         </div>
 
-        {% for title in bookclassinfo.title.all %}
+        
         <div class="book_list">
 
+            {% for title bokk%}
+            <div id="all">
+                <div class="book">
+                    <div class="title">
+                        <h2>{{ bookclassinfo.title }}All</h2>
+                        <hr>
+                    </div>
+                    <div class="book_card">
+                        <img src="{% static 'img/pythonbook.jpg '%}"/>
+                        <div class="book_card_column">
+                            <span class="book_category">
+                                <h4 class="column_title">카테고리</h4>&ensp;{{ bookclassinfo.department }}IT
+                            </span>
+                            <span class="book_publisher">
+                                <h4 class="column_title">출판사</h4>&ensp;{{ bookclassinfo.publisher }}이지퍼블리싱
+                            </span>
+                            <span class="book_date">
+                                <h4 class="column_title">재고</h4>&ensp;{{ bookclassinfo.stock }}5권
+                            </span>
+                            <span class="book_button">
+                                <button><a href="../detail">대여하기</a></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {for }
+            <div id="humanities">
             <div class="book">
                 <div class="title">
-                    <h2>{{ bookclassinfo.title }}점프 투 파이썬</h2>
+                    <h2>{{ bookclassinfo.title }}humanities</h2>
                     <hr>
                 </div>
                 <div class="book_card">
@@ -44,9 +75,90 @@
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+
+            <div id="society">
+            <div class="book">
+                <div class="title">
+                    <h2>{{ bookclassinfo.title }}society</h2>
+                    <hr>
+                </div>
+                <div class="book_card">
+                    <img src="{% static 'img/pythonbook.jpg '%}"/>
+                    <div class="book_card_column">
+                        <span class="book_category">
+                            <h4 class="column_title">카테고리</h4>&ensp;{{ bookclassinfo.department }}IT
+                        </span>
+                        <span class="book_publisher">
+                            <h4 class="column_title">출판사</h4>&ensp;{{ bookclassinfo.publisher }}이지퍼블리싱
+                        </span>
+                        <span class="book_date">
+                            <h4 class="column_title">재고</h4>&ensp;{{ bookclassinfo.stock }}5권
+                        </span>
+                        <span class="book_button">
+                            <button><a href="../detail">대여하기</a></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="media_content">
+            <div class="book">
+                <div class="title">
+                    <h2>{{ bookclassinfo.title }}media_content</h2>
+                    <hr>
+                </div>
+                <div class="book_card">
+                    <img src="{% static 'img/pythonbook.jpg '%}"/>
+                    <div class="book_card_column">
+                        <span class="book_category">
+                            <h4 class="column_title">카테고리</h4>&ensp;{{ bookclassinfo.department }}IT
+                        </span>
+                        <span class="book_publisher">
+                            <h4 class="column_title">출판사</h4>&ensp;{{ bookclassinfo.publisher }}이지퍼블리싱
+                        </span>
+                        <span class="book_date">
+                            <h4 class="column_title">재고</h4>&ensp;{{ bookclassinfo.stock }}5권
+                        </span>
+                        <span class="book_button">
+                            <button><a href="../detail">대여하기</a></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="it">
+            <div class="book">
+                <div class="title">
+                    <h2>{{ bookclassinfo.title }}it</h2>
+                    <hr>
+                </div>
+                <div class="book_card">
+                    <img src="{% static 'img/pythonbook.jpg '%}"/>
+                    <div class="book_card_column">
+                        <span class="book_category">
+                            <h4 class="column_title">카테고리</h4>&ensp;{{ bookclassinfo.department }}IT
+                        </span>
+                        <span class="book_publisher">
+                            <h4 class="column_title">출판사</h4>&ensp;{{ bookclassinfo.publisher }}이지퍼블리싱
+                        </span>
+                        <span class="book_date">
+                            <h4 class="column_title">재고</h4>&ensp;{{ bookclassinfo.stock }}5권
+                        </span>
+                        <span class="book_button">
+                            <button><a href="../detail">대여하기</a></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            </div>
     
     
     </div>
+
+    <script src="{% static 'js/category_color.js '%}"></script>
+    <script src="{% static 'js/category.js '%}"></script>
 
 {% endblock %}

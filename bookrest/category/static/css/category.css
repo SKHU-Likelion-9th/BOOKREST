@@ -7,7 +7,7 @@ html, body{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: "NotoSans", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +16,11 @@ html, body{
 /*링크속성 없애기*/
 a{
    all: unset;
+}
+
+/*navbar 클릭시 색상*/
+.clicked {
+  background-color: #2DBE61;
 }
 
 .category{
@@ -35,6 +40,10 @@ a{
     text-align: center;
     font-size: 18px;
     color: white;
+ }
+
+ .category_nav > .item > button{
+   all: unset;
  }
 
  .category_nav > :hover{
