@@ -23,24 +23,24 @@
         
         <div class="book_list">
 
-            
+            {% for categorys in bookclassinfo.categorys.all %}
             <div id="all">
                 <div class="book">
                     <div class="title">
-                        <h2>{{ bookclassinfo.title }}All</h2>
+                        <h2>{{ categorys.title }}All</h2>
                         <hr>
                     </div>
                     <div class="book_card">
                         <img src="{% static 'img/pythonbook.jpg '%}"/>
                         <div class="book_card_column">
                             <span class="book_category">
-                                <h4 class="column_title">카테고리</h4>&ensp;{{ bookclassinfo.department }}IT
+                                <h4 class="column_title">카테고리</h4>&ensp;{{ categorys.department }}IT
                             </span>
                             <span class="book_publisher">
-                                <h4 class="column_title">출판사</h4>&ensp;{{ bookclassinfo.publisher }}이지퍼블리싱
+                                <h4 class="column_title">출판사</h4>&ensp;{{ categorys.publisher }}이지퍼블리싱
                             </span>
                             <span class="book_date">
-                                <h4 class="column_title">재고</h4>&ensp;{{ bookclassinfo.stock }}5권
+                                <h4 class="column_title">재고</h4>&ensp;{{ categorys.stock }}5권
                             </span>
                             <span class="book_button">
                                 <button><a href="../detail">대여하기</a></button>
@@ -49,6 +49,8 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
+            
             
             <div id="humanities">
             <div class="book">
@@ -157,7 +159,6 @@
     
     </div>
 
-    <script src="{% static 'js/category_color.js '%}"></script>
     <script src="{% static 'js/category.js '%}"></script>
 
 {% endblock %}
