@@ -25,10 +25,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-margin: 10px 10% 1% 10%;
+  margin: 10px 10% 1% 10%;
   box-sizing: border-box;
   margin-top: 2%;
-
 }
 
 .nav__logo > h1 {
@@ -70,4 +69,45 @@ margin: 10px 10% 1% 10%;
 .nav__menu__link--animate::before {
   opacity: 1;
   transform: scale(1);
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  margin-top: 40px;
+  background-color: #191f28;
+}
+
+.footer__summaryTool {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-sizing: border-box;
+  max-width: 1064px;
+  padding-right: 67px;
+  padding-left: 67px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer__summaryTool__summary,
+.footer__summaryTool__operateTime {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #8b95a1;
+}
+
+.footer__summaryTool__summary__h3,
+.footer__summaryTool__summary__h3 {
+  display: block;
+  padding-bottom: 16px;
+  font-size: 15px;
+  color: #b0b8c1;
 }

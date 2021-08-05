@@ -4,10 +4,12 @@ const bookrestMap = document.querySelector(".js-bookrestMap");
 const rule2 = document.querySelector(".js-rule2");
 const faq = document.querySelector(".js-faq");
 
+
 const introduceA = document.querySelector(".js-introduceA");
 const ruleA = document.querySelector(".js-ruleA");
 const bookrestMapA = document.querySelector(".js-bookrestMapA");
 const faqA = document.querySelector(".js-faqA");
+
 
 const NOTICESHOWING_CN = "noticeShowing";
 const INTRODUCESHOW = "introduceShow";
