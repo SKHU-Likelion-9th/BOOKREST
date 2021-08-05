@@ -1,21 +1,29 @@
+from django.http.response import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.utils import timezone
 from django.utils.regex_helper import Choice
 from .models import *
 from .forms import *
+from join.models import *
 
 # Create your views here.
 def vote(request):
-    #투표 중일때와 아닐 때 함수 만들어야함
-    #투표 기능
-    booklists = BookList.objects.all
+    booklists = BookList.objects
+    return render(request, 'vote.html')
 
-    votes = BookList.objects.get(id = id)
-    selection = request.POST['votes']
-    votes.votes += 1
-    votes.save()
+def getvote(request, pk):
+    if not request.user.is_active:
+        return HttpResponse('로그인을 해주세요')
 
-    return redirect('vote')
+    booklist = get_object_or_404(BookList, pk = pk)
+    user = request.user
+    if booklist.votes.filter(id = user.id).exists():
+        return HttpResponse('이미 투표를 했습니다')
+    else:
+        booklist.votes += 1
+    
+    return redirect('getvote')
+    
 
 def addvote(request):
     if request.method == 'POST':
