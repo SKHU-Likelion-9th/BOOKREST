@@ -14,7 +14,7 @@ def category(request):
     if search:
         books = books.filter(title__icontains=search)
 
-    paginator = Paginator(books, 5)
+    paginator = Paginator(books, 9)
     page = request.GET.get('page', '') #몇번째 페이지인지 받아옴
     book_list = paginator.get_page(page) #posts
 

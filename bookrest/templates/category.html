@@ -12,191 +12,60 @@
             <div class="item">미컨</div>
             <div class="item">IT</div>
         </div>    
-    
-        <div class="category_search">
-            <div class="text_item"><input type="text" placeholder="책제목 입력"></div>
-            <div class="button_item"><button>검색</button></div>
-        </div>
+        
+        <form method="GET" action="{% url 'category' %}">
+            <div class="category_search">
+                <div class="text_item"><input type="text" placeholder="책 제목을 입력하세요." name="search" value="{{search}}"></div>
+                <div class="button_item"><button>검색</button></div>
+            </div>
+        </form>
 
         <div class="book_list">
-
             <div class="book">
-                <div class="title">
-                    <h2>Do it! 점프 투 파이썬</h2>
+
+                {% for book in book_list %}
+                <div class="title" id="title" name="title">
+                    <h2 >{{ book.title }}</h2>
                     <hr>
                 </div>
                 <div class="book_card">
-                    <img src="{% static 'img/pythonbook.jpg '%}"/>
+                    <img src="{% static 'img/{{ book.image }}'%}"/>
                     <div class="book_card_column">
                         <span class="book_category">
                             <h4 class="column_title">카테고리</h4>&ensp;IT
                         </span>
-                        <span class="book_author"><h4 class="column_title">저자</h4>&ensp;박응용
+                        <span class="book_author"><h4 class="column_title">저자</h4>&ensp;{{ book.author }}
                         </span>
                         <span class="book_publisher">
-                            <h4 class="column_title">출판사</h4>&ensp;영진닷컴
+                            <h4 class="column_title">출판사</h4>&ensp;{{ book.publisher }}
                         </span>
                         <span class="book_date">
-                            <h4 class="column_title">출간일</h4>&ensp;2019.06.20
+                            <h4 class="column_title">출간일</h4>&ensp;{{ book.pubdate }}
                         </span class="book_left">
                         <span class="book_date">
-                            <h4 class="column_title">재고</h4>&ensp;8권
+                            <h4 class="column_title">재고</h4>&ensp;{{ book.stock }}
                         </span class="book_left">
                         <span class="book_button">
                             <button><a href="detail.html">대여하기</a></button>
                         </span>
                     </div>
                 </div>
-            </div>
+                {% endfor %}
 
-            <div class="book">
-                <div class="title">
-                    <h2>Do it! 점프 투 파이썬</h2>
-                    <hr>
-                </div>
-                <div class="book_card">
-                    <img src="{% static 'img/pythonbook.jpg '%}"/>
-                    <div class="book_card_column">
-                        <span class="book_category">
-                            <h4 class="column_title">카테고리</h4>&ensp;IT
-                        </span>
-                        <span class="book_author"><h4 class="column_title">저자</h4>&ensp;박응용
-                        </span>
-                        <span class="book_publisher">
-                            <h4 class="column_title">출판사</h4>&ensp;영진닷컴
-                        </span>
-                        <span class="book_date">
-                            <h4 class="column_title">출간일</h4>&ensp;2019.06.20
-                        </span class="book_left">
-                        <span class="book_date">
-                            <h4 class="column_title">재고</h4>&ensp;8권
-                        </span class="book_left">
-                        <span class="book_button">
-                            <button><a href="detail.html">대여하기</a></button>
-                        </span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="book">
-                <div class="title">
-                    <h2>Do it! 점프 투 파이썬</h2>
-                    <hr>
-                </div>
-                <div class="book_card">
-                    <img src="{% static 'img/pythonbook.jpg '%}"/>
-                    <div class="book_card_column">
-                        <span class="book_category">
-                            <h4 class="column_title">카테고리</h4>&ensp;IT
-                        </span>
-                        <span class="book_author"><h4 class="column_title">저자</h4>&ensp;박응용
-                        </span>
-                        <span class="book_publisher">
-                            <h4 class="column_title">출판사</h4>&ensp;영진닷컴
-                        </span>
-                        <span class="book_date">
-                            <h4 class="column_title">출간일</h4>&ensp;2019.06.20
-                        </span class="book_left">
-                        <span class="book_date">
-                            <h4 class="column_title">재고</h4>&ensp;8권
-                        </span class="book_left">
-                        <span class="book_button">
-                            <button><a href="detail.html">대여하기</a></button>
-                        </span>
-                    </div>
-                </div>
             </div>
-
-            <div class="book">
-                <div class="title">
-                    <h2>Do it! 점프 투 파이썬</h2>
-                    <hr>
-                </div>
-                <div class="book_card">
-                    <img src="{% static 'img/pythonbook.jpg '%}"/>
-                    <div class="book_card_column">
-                        <span class="book_category">
-                            <h4 class="column_title">카테고리</h4>&ensp;IT
-                        </span>
-                        <span class="book_author"><h4 class="column_title">저자</h4>&ensp;박응용
-                        </span>
-                        <span class="book_publisher">
-                            <h4 class="column_title">출판사</h4>&ensp;영진닷컴
-                        </span>
-                        <span class="book_date">
-                            <h4 class="column_title">출간일</h4>&ensp;2019.06.20
-                        </span class="book_left">
-                        <span class="book_date">
-                            <h4 class="column_title">재고</h4>&ensp;8권
-                        </span class="book_left">
-                        <span class="book_button">
-                            <button><a href="detail.html">대여하기</a></button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="title">
-                    <h2>Do it! 점프 투 파이썬</h2>
-                    <hr>
-                </div>
-                <div class="book_card">
-                    <img src="{% static 'img/pythonbook.jpg '%}"/>
-                    <div class="book_card_column">
-                        <span class="book_category">
-                            <h4 class="column_title">카테고리</h4>&ensp;IT
-                        </span>
-                        <span class="book_author"><h4 class="column_title">저자</h4>&ensp;박응용
-                        </span>
-                        <span class="book_publisher">
-                            <h4 class="column_title">출판사</h4>&ensp;영진닷컴
-                        </span>
-                        <span class="book_date">
-                            <h4 class="column_title">출간일</h4>&ensp;2019.06.20
-                        </span class="book_left">
-                        <span class="book_date">
-                            <h4 class="column_title">재고</h4>&ensp;8권
-                        </span class="book_left">
-                        <span class="book_button">
-                            <button><a href="detail.html">대여하기</a></button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="title">
-                    <h2>Do it! 점프 투 파이썬</h2>
-                    <hr>
-                </div>
-                <div class="book_card">
-                    <img src="{% static 'img/pythonbook.jpg '%}"/>
-                    <div class="book_card_column">
-                        <span class="book_category">
-                            <h4 class="column_title">카테고리</h4>&ensp;IT
-                        </span>
-                        <span class="book_author"><h4 class="column_title">저자</h4>&ensp;박응용
-                        </span>
-                        <span class="book_publisher">
-                            <h4 class="column_title">출판사</h4>&ensp;영진닷컴
-                        </span>
-                        <span class="book_date">
-                            <h4 class="column_title">출간일</h4>&ensp;2019.06.20
-                        </span class="book_left">
-                        <span class="book_date">
-                            <h4 class="column_title">재고</h4>&ensp;8권
-                        </span class="book_left">
-                        <span class="book_button">
-                            <button><a href="detail.html">대여하기</a></button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            
 
         </div>
+        
+        {% if book_list.has_previous %}
+        <a href='?page={{book_list.previous_page_number}}&search={{search}}'>이전</a>
+        {% endif %}
+        <span>{{book_list.number}}</span>
+        <span>/</span>
+        <span>{{book_list.paginator.num_pages}}</span>
+        {% if book_list.has_next %}
+        <a href='?page={{book_list.next_page_number}}&search={{search}}'>다음</a>
+        {% endif %}
     
     
     </div>
