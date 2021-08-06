@@ -1,9 +1,11 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/main.css '%}">
-메인
-
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<h1>메인페이지</h1>
+<br>
+<a href="{% url 'category' %}"> 카테고리</a>
+<br>
 <a href="{% url 'sign_up' %}"> 회원가입</a>
 <a href="{% url 'sign_in' %}"> 로그인</a>
 <h3>이름 : {{ user.username }}</h3>

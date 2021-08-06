@@ -202,3 +202,30 @@
     </div>
 
 {% endblock %}
+
+
+<!-- 
+  지인 작업한 html
+<form method="GET" action="{% url 'category' %}">
+  <input type="text" placeholder="책 제목을 입력하세요." name="search" value="{{search}}">
+  <button type="submit">검색</button>
+</form>
+<div>
+    {% for book in book_list %}
+      <h3>{{ book.title }}</h1>
+      <p>{{ book.department }}</p>
+      <hr>
+    {% endfor %}
+
+  {% if book_list.has_previous %}
+    <a href='?page={{book_list.previous_page_number}}&search={{search}}'>이전</a>
+  {% endif %}
+    <span>{{book_list.number}}</span>
+    <span>/</span>
+    <span>{{book_list.paginator.num_pages}}</span>
+  {% if book_list.has_next %}
+    <a href='?page={{book_list.next_page_number}}&search={{search}}'>다음</a>
+  {% endif %}
+
+
+</div> -->
