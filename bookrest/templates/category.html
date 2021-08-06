@@ -3,17 +3,20 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/category.css '%}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
 
-{{ categorys }}
+<form method="GET" action="{% url 'category' %}">
+    <input type="text" placeholder="책 제목을 입력하세요." name="search" value="{{search}}">
+    <button type="submit">검색</button>
+  
+    <div>
+      {% for book in book_list %}
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.department }}</p>
+        <hr>
+      {% endfor %}
+    </div>
+</form>
 
-{% for book in categorys %}
-<div>{{ book.title }}</div>
-{% endfor %}
-
-{% for book in categorys %}
-<div>{{ book.title }}</div>
-{% endfor %} 
 
 <h1>카테고리 페이지</h1>
     <div class="category">
@@ -31,11 +34,8 @@
             <div class="button_item"><button>검색</button></div>
         </div>
 
-        {% for categorys in categorys.all %}
-        <div>{{ categorys.title }}</div>
-        {% endfor %}
-
-        <form method="GET" action="{% url 'category' %}">
+        
+        
         <div class="book_list">
 
             {% for book in categorys %}
@@ -171,7 +171,7 @@
                 </div>
             </div>
         </div>
-        </form>
+        
     
     
     </div>
