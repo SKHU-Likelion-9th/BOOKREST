@@ -2,6 +2,10 @@
 {% load static %} 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/sign_in.css '%}">
-로그인
-
+<h1>로그인</h1>
+<form method="POST" action="{% url 'sign_in' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">로그인</button>
+  </form>
 {% endblock %}
