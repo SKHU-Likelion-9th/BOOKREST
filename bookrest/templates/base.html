@@ -3,20 +3,11 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-<<<<<<< HEAD
     <link rel="icon" type="image⁄x-icon" href="{% static 'img/logo.png'%}" />
     <link rel="stylesheet" href="{% static 'css/base.css'%}"">
     <title>BOOKREST</title>
   </head>
   <body>
-=======
-    <link rel="icon" type="image⁄x-icon" href="{% static 'img/logo.png '%}" />
-    <link rel="stylesheet" href="{% static 'css/base.css '%}"">
-    <title>BOOKREST</title>
-  </head>
-  <body>
-    <!-- 네브바만 상속 받으면 될 것 같아요 그쵸?-->
->>>>>>> merge/category
     <div class="nav">
     
       <div class="nav__logo">
@@ -26,31 +17,9 @@
       </div>
 
       <div class="nav__menu">
-<<<<<<< HEAD
       
       
         <a class="nav__menu__link js-nav__menu__link" href="{% url 'noticeBase' %}" data-path="/noticeBase">Notice</a>
-=======
-        <a
-          class="nav__menu__link js-nav__menu__link"
-          href="{% url 'mypage' %}"
-          data-path="/join/mypage"
-          >Mypage</a
-        >
-        <a
-          class="nav__menu__link js-nav__menu__link"
-          href="{% url 'sign_up' %}"
-          data-path="/join/sign_up"
-          >Signup</a
-        >
-        <a
-          class="nav__menu__link js-nav__menu__link"
-          href="{% url 'sign_in' %}"
-          data-path="/join/sign_in"
-          >Signin</a
-        >
-        <a class="nav__menu__link js-nav__menu__link" href="{% url 'introduce' %}" data-path="/introduce">Notice</a>
->>>>>>> merge/category
         <a
           class="nav__menu__link js-nav__menu__link"
           href="{% url 'category' %}"
@@ -69,7 +38,6 @@
         data-path="/inquiry/"
         >Inquiry</a
       >
-<<<<<<< HEAD
       <a
       class="nav__menu__link js-nav__menu__link"
       href="{% url 'sign_up' %}"
@@ -97,25 +65,13 @@
       >Signin</a
     >
       {% endif %}
-=======
->>>>>>> merge/category
       </div>
     </div>
 
     {% block content %} {% endblock %}
 
-<<<<<<< HEAD
 
 
     <script src="{% static 'js/nav.js'%}"></script>
   </body>
 </html>
-=======
-    <!-- 푸터도 한다면 여기다 푸터하면 돼용 -->
-
-
-
-    <script src="{% static 'js/nav.js '%}"></script>
-  </body>
-</html>
->>>>>>> merge/category
