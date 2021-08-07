@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a00b9a459dfee6955f8a3fffb0fc0eec5b786c8
 from django.core import paginator
 from django.shortcuts import render
 from .models import BookClassInfo
