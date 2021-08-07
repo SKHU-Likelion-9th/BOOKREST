@@ -2,15 +2,26 @@
 {% load static %} 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/category.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('#get_humanities').click(function() {
+        var department = $('p').text();
+        var humanities = '인문융합자율학부';
+        if(department == humanities){
+            $('p').text('시바견');
+        }
+    })
+</script>
+
 <h1>카테고리 페이지</h1>
     <div class="category">
         
         <div class="category_nav">
-            <div class="item">전체보기</div>
-            <div class="item">인문</div>
-            <div class="item">사회</div>
-            <div class="item">미컨</div>
-            <div class="item">IT</div>
+            <div class="item" id="1"><button id="get_all">전체보기</button></div>
+            <div class="item" id="2"><button id="get_humanities">인문</button></div>
+            <div class="item" id="3"><button id="get_society">사회</button></div>
+            <div class="item" id="4"><button id="get_media_content">미컨</button></div>
+            <div class="item" id="5"><button id="get_it">IT</button></div>
         </div>    
         
         <form method="GET" action="{% url 'category' %}">
@@ -21,18 +32,24 @@
         </form>
 
         <div class="book_list">
+            {% for book in book_list %}
             <div class="book">
 
-                {% for book in book_list %}
+                
                 <div class="title" id="title" name="title">
                     <h2 >{{ book.title }}</h2>
-                    <hr>
+                    
                 </div>
+                <div class="book_middle">
+                    <hr>
                 <div class="book_card">
-                    <img src="{% static 'img/{{ book.image }}'%}"/>
+                    {% if book.image %}
+                    <img src="{{ book.image }}" alt=""/>
+                    {% endif %}
                     <div class="book_card_column">
                         <span class="book_category">
-                            <h4 class="column_title">카테고리</h4>&ensp;IT
+                            <h4 class="column_title">카테고리</h4><button class="star_img"><img id="img" src="{% static 'img/star_unclick.png' %}"></button>
+                            <br><p class="department">{{ book.department }}</p>
                         </span>
                         <span class="book_author"><h4 class="column_title">저자</h4>&ensp;{{ book.author }}
                         </span>
@@ -46,30 +63,42 @@
                             <h4 class="column_title">재고</h4>&ensp;{{ book.stock }}
                         </span class="book_left">
                         <span class="book_button">
-                            <button><a href="detail.html">대여하기</a></button>
+                            <button><a href="../detail">대여하기</a></button>
                         </span>
                     </div>
                 </div>
-                {% endfor %}
+                </div>
+                
 
 
             </div>
+            {% endfor %}
 
         </div>
         
+        <div class="page">
         {% if book_list.has_previous %}
-        <a href='?page={{book_list.previous_page_number}}&search={{search}}'>이전</a>
+            <div class="page_button">
+            <a href='?page={{book_list.previous_page_number}}&search={{search}}'>이전</a>
+            </div>
         {% endif %}
         <span>{{book_list.number}}</span>
-        <span>/</span>
+        <span>&ensp;/&ensp;</span>
         <span>{{book_list.paginator.num_pages}}</span>
         {% if book_list.has_next %}
-        <a href='?page={{book_list.next_page_number}}&search={{search}}'>다음</a>
+            <div class="page_button">
+            <a href='?page={{book_list.next_page_number}}&search={{search}}'>다음</a>
+            </div>
         {% endif %}
+        </div>
     
     
     </div>
 
+    <!--js 불러오기-->
+    <script src="{% static 'js/category.js '%}"></script>
+    <script src="{% static 'js/star.js '%}"></script>
+    
 {% endblock %}
 
 
