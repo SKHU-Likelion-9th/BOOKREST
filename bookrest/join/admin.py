@@ -14,8 +14,7 @@ class UserAdmin(BaseUserAdmin):
     #admin에서 수정할 때 보이는 필드들
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Student info', {'fields': ( 'username','major', 'student_id', )}),
-        ('Person info', {'fields': ('birth', 'phone_number',)}),
+        ('Student info', {'fields': ( 'username','major', 'student_id', 'phone_number')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', )}),
     )
     #admin에서 유저모델 추가할 때 보이는 필드들
