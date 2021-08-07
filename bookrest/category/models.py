@@ -24,13 +24,11 @@ class BookClassInfo(models.Model):
     professor = models.CharField("교수", max_length=30)
     # semester = models.CharField("개설학기", max_length=30,null=True)
     # class_code = models.CharField("과목코드", max_length=7,null=True)
-
     class Meta:
         ordering = ['title']
 
     def __str__(self):
         return "{} - {}".format(self.title,self.class_name)
-
 
 #물리적인 책 각각의 상태
 class BookWhere(models.Model):

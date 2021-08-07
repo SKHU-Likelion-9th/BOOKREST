@@ -9,7 +9,8 @@
 <p>책 저자 : {{book.author}}</p>
 <p>수업개설학과 : {{book.department}}</p>
 <p>찜한 사람 : {{book.wishes.count}}명</p>
-<a href="{% url 'wish' id = book.id">
+<p>남은 수량 : {{book.stock}}개</p>
+<a href="{% url 'wish' book.id %}">
     {% if user in book.wishes.all %}
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
