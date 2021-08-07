@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 # Create your models here.
 
 #inquiry CRUD model : register ask
@@ -14,7 +14,7 @@ class QInquiry(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField()
     #기타
-    pub_date = models.DateField('date published')
+    pub_date = models.DateTimeField()
 
     def __str__(self):
         return self.title

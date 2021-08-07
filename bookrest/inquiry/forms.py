@@ -6,8 +6,8 @@ from .models import *
 class QInquiryForm(forms.ModelForm):
     class Meta:
         model = QInquiry
-        fields = ['first_name', 'last_name', 'phone_number', 'email', 'qtype', 'title', 'body']
-
+        fields = ['first_name', 'last_name', 'phone_number', 'email','title', 'body']
+#  'qtype', 
 #관리자용 해시태그 추가 폼
 class QtypeForm(forms.ModelForm):
     class Meta:

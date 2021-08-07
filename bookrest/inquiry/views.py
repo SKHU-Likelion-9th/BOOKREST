@@ -24,12 +24,12 @@ def ask(request):
             return redirect('inquiry')
     else:
         form = QInquiryForm()
-        return render(request, 'inquiry/ask.html', {'form' : form})
+        return render(request, 'ask.html', {'form' : form})
     
 #작성 글 자세히 보기
 def inqdetail(request, id):
     inquiry = get_object_or_404(QInquiry, id = id)
-    return render(request, 'inquiry/inqdetail.html', {'inquiry':inquiry})
+    return render(request, 'inqdetail.html', {'inquiry':inquiry})
 
 #작성 글 수정하기
 def inqedit(request, id):
@@ -45,7 +45,7 @@ def inqedit(request, id):
 
     else:
         form = QInquiryForm(instance=inquiry)
-        return render(request, 'inquiry/inqedit.html', {'form' : form})
+        return render(request, 'inqedit.html', {'form' : form})
 
 #작성 글 삭제하기
 def inqdelete(request, id):
@@ -58,7 +58,7 @@ def inqdelete(request, id):
 #관리자용 문의글 목록 페이지
 def answer(request):
     inquirys = QInquiry.objects
-    return render(request, 'inquiry/answer.html', {'inquirys':inquirys})
+    return render(request, 'answer.html', {'inquirys':inquirys})
 
 #관리자용 문의 답변 페이지
 def ansdetail(request, id):
@@ -74,4 +74,4 @@ def ansdetail(request, id):
 
     else:
         form = AnswerForm()
-        return render(request, 'inquiry/ansdetail.html', {'inquiry':inquiry, 'form':form})
+        return render(request, 'ansdetail.html', {'inquiry':inquiry, 'form':form})

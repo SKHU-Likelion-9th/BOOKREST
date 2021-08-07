@@ -85,27 +85,32 @@
 }
 
 .noticeTool__summaryTool__box__summary__post {
-  margin-top: 10px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  text-align: center;
   padding: 0px 0px 0px 40px;
-  max-width: 100%;
   height: 50px;
   background-color: rgba(230, 230, 230, 0.6);
 }
 
 
 .noticeTool__summaryTool__box__summary__post__preview {
-  display: flex;
-  width: 300px;
-  text-align: center;
   font-size: 18px;
+
   font-weight: 700;
 }
 
-.noticeTool__summaryTool__box__summary__post__about {
-  font-size: 14px;
-  width: 100px;
+
+
+
+.noticeTool__summaryTool__box__summary {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.noticeTool__summaryTool__box__summary__post > a{
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
