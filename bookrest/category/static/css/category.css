@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
-html, body{
+.background{
     width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
+    height: 1400px;
     margin: 0;
     padding: 0;
     font-family: "Noto Sans KR", sans-serif;
@@ -20,6 +19,12 @@ a{
 
 p{
   all: unset;
+}
+
+hr{
+  border: 0px;
+  height: 1px;
+  background-color: #000000;
 }
 
 /*navbar 클릭시 색상*/
@@ -44,6 +49,13 @@ p{
     text-align: center;
     font-size: 18px;
     color: white;
+    
+ }
+ #all, #get_all{
+  border-radius: 5px 0px 0px 5px;
+ }
+ #it, #get_it{
+  border-radius: 0px 5px 5px 0px;
  }
 
  .category_nav > .item > button{
@@ -108,6 +120,7 @@ p{
    grid-template-rows: auto;
    gap: 45px;
    margin-bottom: 20px;
+   font-family: "Noto Sans KR", sans-serif;
  }
 
  .book{
@@ -117,11 +130,13 @@ p{
    border: 3px solid #000000;
    box-shadow: 9px 9px 0 #bdccd4;
    justify-content: space-between;
+   border-radius: 5px 5px 5px 5px;
  }
 
  .book > .title > h2{
    all: unset;
-   font-family: 'Noto Sans', sans-serif;
+   font-family: 'Noto Sans KR', sans-serif;
+   font-weight: bold;
  }
 
  .book > .title > hr{
@@ -134,7 +149,7 @@ p{
    grid-template-rows: min-content;
  }
 
- .book_card > img {
+ .book_card > .img_area > img {
    width: 105px;
    height: 148px;
    border: 1px solid #000000;
@@ -144,11 +159,11 @@ p{
    display: flex;
    flex-direction: column;
    width: 157px;
-   font-size: 14px;
+   font-size: 13px;
  }
 
  .book_card_column > span{
-   margin-top: 17px;
+   margin-top: 7px;
  }
 
  /*book card에서 카테고리 부분은 띄우지 않기 위함*/
@@ -166,11 +181,6 @@ p{
    cursor: pointer;
  }
 
- .title > hr{
-  height:1px;
-  background-color: #000000;
- }
-
  .column_title {
    all: unset;
    font-weight: 100;
@@ -178,7 +188,7 @@ p{
  }
 
  .book_card_column > .book_button > button{
-  margin-top: 12px; 
+  margin-top: 5px; 
   width: 100%;
    height: 100%;
    background: #808080;
@@ -201,6 +211,7 @@ p{
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
  }
  .page > .page_button{
    margin-left: 10px;

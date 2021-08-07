@@ -13,15 +13,15 @@
     })
 </script>
 
-<h1>카테고리 페이지</h1>
+<div class="background">
     <div class="category">
         
         <div class="category_nav">
-            <div class="item" id="1"><button id="get_all">전체보기</button></div>
-            <div class="item" id="2"><button id="get_humanities">인문</button></div>
-            <div class="item" id="3"><button id="get_society">사회</button></div>
-            <div class="item" id="4"><button id="get_media_content">미컨</button></div>
-            <div class="item" id="5"><button id="get_it">IT</button></div>
+            <div class="item" id="all"><button id="get_all">전체보기</button></div>
+            <div class="item" id="humanities" name="major_인문"><button id="get_humanities">인문</button></div>
+            <div class="item" id="society" name="major_사회"><button id="get_society">사회</button></div>
+            <div class="item" id="media_content" name="major_미컨"><button id="get_media_content">미컨</button></div>
+            <div class="item" id="it"><button id="get_it" name="major_IT">IT</button></div>
         </div>    
         
         <form method="GET" action="{% url 'category' %}">
@@ -43,9 +43,11 @@
                 <div class="book_middle">
                     <hr>
                 <div class="book_card">
+                    <div class="img_area">
                     {% if book.image %}
                     <img src="{{ book.image }}" alt=""/>
                     {% endif %}
+                    </div>
                     <div class="book_card_column">
                         <span class="book_category">
                             <h4 class="column_title">카테고리</h4><button class="star_img"><img id="img" src="{% static 'img/star_unclick.png' %}"></button>
@@ -94,7 +96,7 @@
     
     
     </div>
-
+</div>
     <!--js 불러오기-->
     <script src="{% static 'js/category.js '%}"></script>
     <script src="{% static 'js/star.js '%}"></script>
