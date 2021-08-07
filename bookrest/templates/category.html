@@ -32,7 +32,6 @@
         </form>
 
         <div class="book_list">
-<<<<<<< HEAD
             {% for book in book_list %}
             <div class="book">
 
@@ -51,20 +50,6 @@
                         <span class="book_category">
                             <h4 class="column_title">카테고리</h4><button class="star_img"><img id="img" src="{% static 'img/star_unclick.png' %}"></button>
                             <br><p class="department">{{ book.department }}</p>
-=======
-            <div class="book">
-
-                {% for book in book_list %}
-                <div class="title" id="title" name="title">
-                    <h2 >{{ book.title }}</h2>
-                    <hr>
-                </div>
-                <div class="book_card">
-                    <img src="{% static 'img/{{ book.image }}'%}"/>
-                    <div class="book_card_column">
-                        <span class="book_category">
-                            <h4 class="column_title">카테고리</h4>&ensp;IT
->>>>>>> 0a00b9a459dfee6955f8a3fffb0fc0eec5b786c8
                         </span>
                         <span class="book_author"><h4 class="column_title">저자</h4>&ensp;{{ book.author }}
                         </span>
@@ -78,7 +63,6 @@
                             <h4 class="column_title">재고</h4>&ensp;{{ book.stock }}
                         </span class="book_left">
                         <span class="book_button">
-<<<<<<< HEAD
                             <button><a href="../detail">대여하기</a></button>
                         </span>
                     </div>
@@ -107,28 +91,6 @@
             </div>
         {% endif %}
         </div>
-=======
-                            <button><a href="detail.html">대여하기</a></button>
-                        </span>
-                    </div>
-                </div>
-                {% endfor %}
-
-
-            </div>
-
-        </div>
-        
-        {% if book_list.has_previous %}
-        <a href='?page={{book_list.previous_page_number}}&search={{search}}'>이전</a>
-        {% endif %}
-        <span>{{book_list.number}}</span>
-        <span>/</span>
-        <span>{{book_list.paginator.num_pages}}</span>
-        {% if book_list.has_next %}
-        <a href='?page={{book_list.next_page_number}}&search={{search}}'>다음</a>
-        {% endif %}
->>>>>>> 0a00b9a459dfee6955f8a3fffb0fc0eec5b786c8
     
     
     </div>
@@ -152,10 +114,6 @@
       <p>{{ book.department }}</p>
       <hr>
     {% endfor %}
-<<<<<<< HEAD
-=======
-
->>>>>>> 0a00b9a459dfee6955f8a3fffb0fc0eec5b786c8
   {% if book_list.has_previous %}
     <a href='?page={{book_list.previous_page_number}}&search={{search}}'>이전</a>
   {% endif %}
@@ -165,9 +123,4 @@
   {% if book_list.has_next %}
     <a href='?page={{book_list.next_page_number}}&search={{search}}'>다음</a>
   {% endif %}
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 0a00b9a459dfee6955f8a3fffb0fc0eec5b786c8
 </div> -->
