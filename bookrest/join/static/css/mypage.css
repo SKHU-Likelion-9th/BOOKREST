@@ -92,7 +92,7 @@ html, body, .my_page_background{
 
  .rental_book_list{
     padding: 20px;
-    height: 317px;
+    
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
