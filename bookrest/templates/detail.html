@@ -2,30 +2,59 @@
 {% load static %} 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/detail.css '%}">
-<h1>디테일 페이지</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+<div class="background">
 <div class="book">
     
     <div class="book_box">
         <img src="{% static 'img/pythonbook.jpg '%}"/>
-        <div class="book_detail">
-            <span class="book_category">
-                <h4 class="column_title">카테고리</h4>&ensp;IT
-            </span>
-            <span class="book_author"><h4 class="column_title">저자</h4>&ensp;박응용
-            </span>
-            <span class="book_publisher">
-                <h4 class="column_title">출판사</h4>&ensp;영진닷컴
-            </span>
-            <span class="book_date">
-                <h4 class="column_title">출간일</h4>&ensp;2019.06.20
-            </span class="book_left">
-            <span class="book_date">
-                <h4 class="column_title">재고</h4>&ensp;8권
-            </span class="book_left">
+            <div class="book_detail">
+                <span class="name">Do it! 점프 투 파이썬</span>
+                <div class="book_info">
+                    <hr>
+                    <span class="author">박응용</span>
+                    <span>ㅣ</span>
+                    <span class="publisher">이지퍼블리싱</span>
+                    <span>ㅣ</span>
+                    <span class="date">2019년 06월 25일</span>
+                    <button class="star_img"><img id="img" src="{% static 'img/star_unclick.png' %}"></button>
+                </div>
+                <span class="book_subject">
+                    <h4 class="col_title">과목명</h4>
+                    <span>&ensp;python</span>
+                </span>
+                <span class="book_professor">
+                    <h4 class="col_title">교수님</h4>
+                    <span>&ensp;홍은지 교수님</span>
+                </span>
+                <span class="book_major">
+                    <h4 class="col_title">학부</h4>
+                    <span>&ensp;IT융합자율학부</span>
+                </span>
+                <span class="book_date">
+                    <h4 class="col_title">개설학기</h4>
+                    <span>&ensp;2021 1학기</span>
+                </span>
+                <span class="book_price">
+                    <h4 class="col_title">재고</h4>
+                    <span>&ensp;5권</span>
+                </span>
+                <span class="book_rental">
+                    <button type="button" id="modal-open">대여신청</button>
+                </span>
+            </div>
         </div>
     </div>
-
 </div>
+</div>
+
+
+
+
+  <script src="{% static 'js/star.js '%}"></script>
+  <script src="{% static 'js/rental.js '%}"></script>
+
+  
 
 {% endblock %}

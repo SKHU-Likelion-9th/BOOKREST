@@ -3,28 +3,20 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/category.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-    $('#get_humanities').click(function() {
-        var department = $('p').text();
-        var humanities = '인문융합자율학부';
-        if(department == humanities){
-            $('p').text('시바견');
-        }
-    })
-</script>
+
 
 <div class="background">
     <div class="category">
-        
+        <form method="GET" action="{% url 'category' %}">
+
         <div class="category_nav">
             <div class="item" id="all"><button id="get_all">전체보기</button></div>
-            <div class="item" id="humanities" name="major_인문"><button id="get_humanities">인문</button></div>
-            <div class="item" id="society" name="major_사회"><button id="get_society">사회</button></div>
-            <div class="item" id="media_content" name="major_미컨"><button id="get_media_content">미컨</button></div>
-            <div class="item" id="it"><button id="get_it" name="major_IT">IT</button></div>
+            <div class="item" id="humanities"><button id="get_humanities" name="major" value="인문">인문</button></div>
+            <div class="item" id="society"><button id="get_society" name="major" value="사회">사회</button></div>
+            <div class="item" id="media_content"><button id="get_media_content" name="major" value="미컨">미컨</button></div>
+            <div class="item" id="it"><button id="get_it" name="major" value="IT">IT</button></div>
         </div>    
         
-        <form method="GET" action="{% url 'category' %}">
             <div class="category_search">
                 <div class="text_item"><input type="text" placeholder="책 제목을 입력하세요." name="search" value="{{search}}"></div>
                 <div class="button_item"><button>검색</button></div>
@@ -33,7 +25,9 @@
 
         <div class="book_list">
             {% for book in book_list %}
+            
             <div class="book">
+                <a class="link" href="../detail/">
 
                 
                 <div class="title" id="title" name="title">
@@ -50,7 +44,7 @@
                     </div>
                     <div class="book_card_column">
                         <span class="book_category">
-                            <h4 class="column_title">카테고리</h4><button class="star_img"><img id="img" src="{% static 'img/star_unclick.png' %}"></button>
+                            <h4 class="column_title">카테고리</h4>
                             <br><p class="department">{{ book.department }}</p>
                         </span>
                         <span class="book_author"><h4 class="column_title">저자</h4>&ensp;{{ book.author }}
@@ -64,34 +58,28 @@
                         <span class="book_date">
                             <h4 class="column_title">재고</h4>&ensp;{{ book.stock }}
                         </span class="book_left">
-                        <span class="book_button">
-                            <button><a href="../detail">대여하기</a></button>
-                        </span>
                     </div>
                 </div>
                 </div>
                 
 
-
+            </a>
             </div>
+            
             {% endfor %}
 
         </div>
         
         <div class="page">
-        {% if book_list.has_previous %}
-            <div class="page_button">
-            <a href='?page={{book_list.previous_page_number}}&search={{search}}'>이전</a>
-            </div>
-        {% endif %}
-        <span>{{book_list.number}}</span>
-        <span>&ensp;/&ensp;</span>
-        <span>{{book_list.paginator.num_pages}}</span>
-        {% if book_list.has_next %}
-            <div class="page_button">
-            <a href='?page={{book_list.next_page_number}}&search={{search}}'>다음</a>
-            </div>
-        {% endif %}
+            {% if book_list.has_previous %}
+            <a href='?page={{book_list.previous_page_number}}&search={{search}}&major={{major}}' class="page_move">이전</a>
+          {% endif %}
+            <span>{{book_list.number}}</span>
+            <span>&ensp;/&ensp;</span>
+            <span>{{book_list.paginator.num_pages}}</span>
+          {% if book_list.has_next %}
+            <a href='?page={{book_list.next_page_number}}&search={{search}}&major={{major}}' class="page_move">다음</a>
+          {% endif %}
         </div>
     
     

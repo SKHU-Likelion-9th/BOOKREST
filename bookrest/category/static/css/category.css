@@ -3,7 +3,7 @@
 
 .background{
     width: 100vw;
-    height: 1400px;
+    height: 1000px;
     margin: 0;
     padding: 0;
     font-family: "Noto Sans KR", sans-serif;
@@ -13,9 +13,6 @@
 }
 
 /*링크속성 없애기*/
-a{
-   all: unset;
-}
 
 p{
   all: unset;
@@ -63,10 +60,10 @@ hr{
    width: 100%;
  }
 
- /*처음 category 페이지 방문 시 전체보기에 초록색 배경 설정*/
+ /*처음 category 페이지 방문 시 전체보기에 초록색 배경 설정
  #get_all{
    background-color: #2DBE61;
- }
+ }*/
  
  .category_nav > :hover{
     cursor: pointer;
@@ -123,6 +120,10 @@ hr{
    font-family: "Noto Sans KR", sans-serif;
  }
 
+ .book_list > :hover{
+   box-shadow: 9px 9px 0 #2DBE61;
+ }
+
  .book{
    display: flex;
    flex-direction: column;
@@ -132,15 +133,17 @@ hr{
    justify-content: space-between;
    border-radius: 5px 5px 5px 5px;
  }
+ .book > .link{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 100%
+ }
 
- .book > .title > h2{
+ .book > .link > .title > h2{
    all: unset;
    font-family: 'Noto Sans KR', sans-serif;
    font-weight: bold;
- }
-
- .book > .title > hr{
-   border: 1px solid #000000;
  }
 
  .book_card{
@@ -170,17 +173,6 @@ hr{
  .book_card_column > .book_category{
    margin-top: 0px;
  }
- .book_card_column > .book_category > .star_img{
-   all: unset;
-   float: right;
- }
- .book_card_column > .book_category > .star_img > img{
-   width: 16px;
-   height: 16px;
-   
-   cursor: pointer;
- }
-
  .column_title {
    all: unset;
    font-weight: 100;
@@ -197,6 +189,11 @@ hr{
    outline: none;
    height: 32px;
    width: 80px;
+   border-radius: 2px 2px 2px 2px;
+ }
+
+ .book_card_column > .book_button > button > a{
+    all: unset;
  }
 
  .book_card_column > .book_button > :hover{
@@ -207,17 +204,19 @@ hr{
 .page{
   align-items: center;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
  }
- .page > .page_button{
+ .page > .page_move{
    margin-left: 10px;
    margin-right: 10px;
    cursor: pointer;
    color: #2DBE61;
+ }
+ .page > .page_button > a{
+   all: unset;
  }
  .page > span{
    color: #808080;
