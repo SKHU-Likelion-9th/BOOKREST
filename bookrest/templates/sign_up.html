@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'css/sign_up.css'%}" />
 
@@ -665,5 +666,26 @@
 
 <script src="{% static 'js/terms.js'%}"></script>
 <script src="{% static 'js/signup.js'%}"></script>
+=======
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/sign_up.css '%}">
+<h1>회원가입</h1>
+
+<form action="{% url 'sign_up' %} " method="POST">
+    {% csrf_token %}
+    {% for field in signup_form %}
+        <p>
+            {{field.label_tag}}
+            {{field}}
+        </p>
+        {% for error in field.errors %}
+            <p>{{error}}</p>
+        {% endfor %}
+    {% endfor %}
+    <button type="submit">회원가입</button>
+</form>
+>>>>>>> merge/category
 
 {% endblock %}

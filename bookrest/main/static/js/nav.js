@@ -16,4 +16,8 @@ const navInit = () => {
   window.setTimeout(compareCurrentPath, 130);
 };
 
+<<<<<<< HEAD
 navInit();
+=======
+navInit();
+>>>>>>> merge/category
