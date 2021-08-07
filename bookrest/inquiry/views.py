@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import *
 from .forms import *
-
+from django.http import HttpResponse
 # Create your views here.
 
 #views for register
@@ -42,7 +42,6 @@ def inqedit(request, id):
             inquiry.save()
             form.save_m2m()
             return redirect('inqdetail', id)
-
     else:
         form = QInquiryForm(instance=inquiry)
         return render(request, 'inqedit.html', {'form' : form})

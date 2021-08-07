@@ -114,3 +114,10 @@
   flex-direction: row;
   align-items: center;
 }
+
+
+.inquiry_pubdate{
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 10px;
+}
