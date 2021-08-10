@@ -25,10 +25,13 @@ class BookClassInfo(models.Model):
     department = models.CharField("수업개설학과", max_length=30)
     class_name = models.CharField("수업명", max_length=30)
     professor = models.CharField("교수", max_length=30)
-    wishes = models.ManyToManyField(settings.AUTH_USER_MODEL, null=True, blank=True, related_name = 'wish')
     # semester = models.CharField("개설학기", max_length=30,null=True)
     # class_code = models.CharField("과목코드", max_length=7,null=True)
 
+    #detail models
+    borrows = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name = 'borrow')
+    wishes = models.ManyToManyField(settings.AUTH_USER_MODEL,blank=True, related_name = 'wish')
+    
     class Meta:
         ordering = ['title']
 
