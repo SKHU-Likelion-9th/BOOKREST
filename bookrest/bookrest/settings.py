@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'join.apps.JoinConfig',
     'inquiry.apps.InquiryConfig',
     'vote.apps.VoteConfig',
-
+    #'django.contrib.django_filters',
 
 ]
 
