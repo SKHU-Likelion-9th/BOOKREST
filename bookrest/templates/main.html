@@ -81,42 +81,46 @@
 
   <div class="main__Tool__category">
     <div class="main__Tool__category__title">
-      <h2>카테고리</h2>
-    </div>
-    <div class="main__Tool__category__menu">
-      <div class="main__Tool__category__menu__all js-menuAll">전체보기</div>
-
-      <div class="main__Tool__category__menu__1 js-menu1">인문</div>
-
-      <div class="main__Tool__category__menu__2 js-menu2">사융</div>
-
-      <div class="main__Tool__category__menu__3 js-menu3">미디어컨텐츠</div>
-
-      <div class="main__Tool__category__menu__4 js-menu4">IT</div>
+      <h2>{{major}} 이번 주 입고된 책</h2>
     </div>
 
-    <div class="main__Tool__mainToCategory">
-      <a><span class="main__Tool__mainToCategory__a">더보기</span></a>
-    </div>
     <div class="main__Tool__category__list">
+      
+      {% for book in book_list %}
+      <a class="link" href="../detail/">
       <div class="main__Tool__category__list__book">
         <div class="main__Tool__book__list__category__img">
-          <img src="{% static 'img/book2.jpg'%}" />
+          {% if book.image %}
+          <img src="{{ book.image }}" alt="" />
+          {% endif %}
         </div>
-        <div class="main__Tool__category__list__summary">
-          <h2 class="main__Tool__category__list__summary__title">제목입니당</h2>
+        <div class="main__Tool__category__scrollbar">
+          <div class="main__Tool__category__list__summary">
+            <h2 class="main__Tool__category__list__summary__title">
+              {{ book.title }}
+            </h2>
 
-          <h3 class="main__Tool__category__list__summary__category">
-            카테고리명
-          </h3>
+            <h3 class="main__Tool__category__list__summary__category">
+              {{ book.department }}
+            </h3>
 
-          <h3 class="main__Tool__category__list__summary__author">
-            작가명/출판사
-          </h3>
+            <h3 class="main__Tool__category__list__summary__author">
+              {{ book.author }}/{{ book.publisher }}
+            </h3>
 
-          <h4 class="main__Tool__category__list__summary__num">재고 수</h4>
+            <h4 class="main__Tool__category__list__summary__num">
+              재고 수 ({{ book.stock }})
+            </h4>
+          </div>
         </div>
       </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="main__Tool__category__list__page">
+      랜덤으로 표시됩니다.
+      <span>더 많은 책을 보고싶다면 <a href="{% url 'category' %}">더보기</a></span>
     </div>
   </div>
 
@@ -160,7 +164,9 @@
             <a href="mailto:julia128126@gmail.com"
               ><i class="far fa-envelope"></i
             ></a>
-            <a href="https://julia1281.tistory.com/"><i class="far fa-file"></i></a>
+            <a href="https://julia1281.tistory.com/"
+              ><i class="far fa-file"></i
+            ></a>
           </div>
         </figcaption>
       </div>
@@ -176,7 +182,9 @@
             <a href="mailto:dbgktjd@gmail.com"
               ><i class="far fa-envelope"></i
             ></a>
-            <a href="https://leopardcatstudio.tistory.com/"><i class="far fa-file"></i></a>
+            <a href="https://leopardcatstudio.tistory.com/"
+              ><i class="far fa-file"></i
+            ></a>
           </div>
         </figcaption>
       </div>
@@ -188,13 +196,13 @@
         <h3>Yundahye</h3>
         <figcaption>
           <div class="icons">
-            <a href="https://github.com/hanseulhee"
+            <a href="https://github.com/Rahdduru"
               ><i class="fab fa-github"></i
             ></a>
-            <a href="mailto:3021062@gmail.com"
+            <a href="mailto:pochi89@likelion.org"
               ><i class="far fa-envelope"></i
             ></a>
-            <a href="https://velog.io/@seulhyi"><i class="far fa-file"></i></a>
+            <a href="https://www.instagram.com/e_verything_do_/"><i class="far fa-file"></i></a>
           </div>
         </figcaption>
       </div>
@@ -217,7 +225,7 @@
     </div>
   </div>
 </div>
-    
+
 <div class="footer">
   <div class="footer__summaryTool">
     <div class="footer__summaryTool__summary">
@@ -250,9 +258,9 @@
   crossorigin="anonymous"
 ></script>
 
-<script src="{% static 'js/mainBookList.js'%}"></script>
+<!-- <script src="{% static 'js/mainBookList.js'%}"></script> -->
 <script src="{% static 'js/slide.js'%}"></script>
 <script src="{% static 'js/scroll.js'%}"></script>
+<script src="{% static 'js/category.js '%}"></script>
 
 {% endblock %}
-

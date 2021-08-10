@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'join.apps.JoinConfig',
     'inquiry.apps.InquiryConfig',
     'vote.apps.VoteConfig',
+    'main.apps.MainConfig',
 
 
 ]
