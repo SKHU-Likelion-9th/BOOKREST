@@ -6,9 +6,9 @@ from .models import CustomUser
 # Create your views here.
 
 
-def mypage(request, user_id):  # 마이페이지
-    user = CustomUser.objects.get(username=user_id)
-    return render(request, 'mypage.html', {'user': user})
+def mypage(request):  # 마이페이지
+    # user = CustomUser.objects.get(username=user_id)
+    return render(request, 'mypage.html')
 
 def sign_up(request):  # 회원가입
     context = {}

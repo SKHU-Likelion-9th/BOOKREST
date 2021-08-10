@@ -19,45 +19,51 @@
       <div class="nav__menu">
       
       
-        <a class="nav__menu__link js-nav__menu__link" href="{% url 'noticeBase' %}" data-path="/noticeBase">Notice</a>
+        <a class="nav__menu__link js-nav__menu__link" href="{% url 'noticeBase' %}" data-path="/noticeBase">공지사항</a>
         <a
           class="nav__menu__link js-nav__menu__link"
           href="{% url 'category' %}"
           data-path="/category/"
-          >Category</a
+          >카테고리</a
         >
         <a
           class="nav__menu__link js-nav__menu__link"
           href="{% url 'vote' %}"
           data-path="/vote/"
-          >Vote</a
+          >이달의 책</a
         >
         <a
         class="nav__menu__link js-nav__menu__link"
         href="{% url 'inquiry' %}"
         data-path="/inquiry/"
-        >Inquiry</a
+        >문의하기</a
       >
-      <a
-      class="nav__menu__link js-nav__menu__link"
-      href="{% url 'sign_up' %}"
-      data-path="/join/sign_up"
-      >Signup</a
-    >
+      
    
     {% if user.is_active %}
     <a
         class="nav__menu__link js-nav__menu__link"
         href="{% url 'sign_out' %}"
-        >Logout</a
+        >로그아웃</a
       >
-    <a>{{ user.username }}님 안녕하세요.</a>
+      <a
+        class="nav__menu__link js-nav__menu__link"
+        href="{% url 'mypage' %}"
+        data-path="/mypage/"
+        >{{ user.username }}님 안녕하세요.</a
+      >
     {% else %}
     <a
       class="nav__menu__link js-nav__menu__link"
       href="{% url 'sign_in' %}"
       data-path="/join/sign_in"
-      >Signin</a
+      >로그인</a
+    >
+    <a
+      class="nav__menu__link js-nav__menu__link"
+      href="{% url 'sign_up' %}"
+      data-path="/join/sign_up"
+      >회원가입</a
     >
     {% endif %}
       </div>
