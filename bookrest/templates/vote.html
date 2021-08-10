@@ -1,17 +1,14 @@
-{% extends 'base.html' %} 
-{% load static %} 
-
-{% block content %}
-<link rel="stylesheet" href="{% static 'css/vote.css'%}">
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/vote.css'%}" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <br><br>
 <div class="background">
     <div class="vote_explain">
-        <h4 class="explain">이달의 페이지는 학생들이 대여하기 희망하는 책을 투표하는 페이지 입니다</h4>
+        <h4 class="explain">✅ 대여하고 싶은 이달의 책에 투표하세요 ✅</h4>
         <p>투표를 통해 선정된 1위~5위까지의 책은 다음달까지 5권씩 추가로 비치됩니다.</p>
     </div>
-
+    <br>
 <div class="vote_page">
     <div class="vote_page_element">
         
