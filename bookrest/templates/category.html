@@ -27,7 +27,7 @@
             {% for book in book_list %}
             
             <div class="book">
-                <a class="link" href="../detail/">
+                <a class="link" href="{% url 'detail' book.id %}">
 
                 
                 <div class="title" id="title" name="title">
@@ -90,4 +90,3 @@
     <script src="{% static 'js/star.js '%}"></script>
     
 {% endblock %}
-

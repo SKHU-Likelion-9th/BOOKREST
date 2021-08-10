@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{% static 'css/sign_in.css'%}" />
 
 <form id="signinForm" class="signinForm" method="POST" action="{% url 'sign_in' %}">
+  {% csrf_token %}
   <div class="signinBoxTool">
     <div class="signinBoxTool__signinBox">
       <div class="signinBoxTool__signinBox__summary">
@@ -13,7 +14,7 @@
           <div class="signinBoxTool__signinBox__form-control__title">
             <span>이메일</span>
           </div>
-          <input type="text" class="email input" name="email" placeholder="Enter Email" />
+          <input type="text" class="email input" name="username" placeholder="Enter Email" />
           <small>Error message</small>
         </div>
 
@@ -25,7 +26,7 @@
             type="password"
             class="password input"
             placeholder="Enter password"
-            name="password1"
+            name="password"
           />
           <small>Error message</small>
         </div>

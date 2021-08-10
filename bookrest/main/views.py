@@ -1,5 +1,5 @@
 from django.core import paginator
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from category.models import BookClassInfo
 from django.core.paginator import Paginator
 import random
@@ -40,3 +40,7 @@ def noticeBase(request):
 
 def rule(request):
     return render(request, 'rule.html')
+
+def detail(request, id):
+    book = get_object_or_404(BookClassInfo, id = id)
+    return render(request, 'detail.html', {'book':book})

@@ -6,8 +6,12 @@ from django.db.models.base import Model
 from datetime import date, timedelta
 from django.conf import settings
 from join.choices import *
+import django_filters
 
 # Create your models here.
+
+#대여 기능 : ManyToManyField 사용 -> CustomUser와 외래키로 연결
+from join.models import CustomUser
 
 #기본적인 책 정보 
 class BookClassInfo(models.Model):
@@ -24,11 +28,16 @@ class BookClassInfo(models.Model):
     # semester = models.CharField("개설학기", max_length=30,null=True)
     # class_code = models.CharField("과목코드", max_length=7,null=True)
 
+    #detail models
+    borrows = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name = 'borrow')
+    wishes = models.ManyToManyField(settings.AUTH_USER_MODEL,blank=True, related_name = 'wish')
+    
     class Meta:
         ordering = ['title']
 
     def __str__(self):
         return "{} - {}".format(self.title,self.class_name)
+
 
 #물리적인 책 각각의 상태
 class BookWhere(models.Model):

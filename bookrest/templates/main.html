@@ -87,7 +87,7 @@
     <div class="main__Tool__category__list">
       
       {% for book in book_list %}
-      <a class="link" href="../detail/">
+      <a class="link" href="{% url 'detail' book.id %}">
       <div class="main__Tool__category__list__book">
         <div class="main__Tool__book__list__category__img">
           {% if book.image %}
