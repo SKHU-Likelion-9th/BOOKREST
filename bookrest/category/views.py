@@ -27,7 +27,29 @@ def detail(request, id):
     book = get_object_or_404(BookClassInfo, id = id)
     return render(request, 'detail.html', {'book':book})
 
-#wish 기능
+#borrow 기능
+def borrow(request, id):
+    if not request.user.is_active:
+        return HttpResponse('로그인 해주세요')
+    
+    book = get_object_or_404(BookClassInfo, id = id)
+    user = request.user
+
+    if book.borrows.filter(id = user.id).exists():
+        book.borrows.remove(user)
+        book.stock += 1
+        book.save()
+
+    else:
+        book.borrows.add(user)
+        book.stock -= 1
+        book.save()
+        
+        if book.stock == 0:
+            return HttpResponse('재고가 없습니다.')
+    return redirect('detail', id = book.id)
+
+#찜하기
 def wish(request, id):
     if not request.user.is_active:
         return HttpResponse('로그인 해주세요')
@@ -37,14 +59,8 @@ def wish(request, id):
 
     if book.wishes.filter(id = user.id).exists():
         book.wishes.remove(user)
-        book.stock += 1
-        book.save()
 
     else:
         book.wishes.add(user)
-        book.stock -= 1
-        book.save()
-        
-        if book.stock == 0:
-            return HttpResponse('재고가 없습니다.')
+
     return redirect('detail', id = book.id)
