@@ -127,7 +127,7 @@
 
 .main__Tool__category__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 270px);
+  grid-template-columns: repeat(auto-fit, 277px);
   gap: 40px;
   padding: 0px 12px;
   align-items: stretch;
@@ -610,7 +610,6 @@
   margin-left: 360px;
 } */
 
-
 .main__Tool__developer__younglion.scroll--animate {
   animation: 1.8s slide-right;
   transform: translateX(0);
@@ -639,37 +638,27 @@
   font-weight: 700;
 }
 
-
-
-
 @media screen and (max-width: 1000px) {
-
   .container {
     margin-bottom: 500px;
-}
+  }
   .container__slider {
     height: 20vh;
     width: 80vw;
     margin-top: 15px;
   }
 
-  
   .js-container__slider__img {
     width: 80vw;
     height: 20vh;
-    object-fit:fill;
+    object-fit: fill;
   }
   .main__Tool__book__list__img > img {
-  
-    width:100%;
+    width: 100%;
     height: 355px;
-   
-}
+  }
 
-.main__Tool__category__list {
-  grid-template-columns: repeat(auto-fit, 220px);
-
-}
-
-
+  .main__Tool__category__list {
+    grid-template-columns: repeat(auto-fit, 220px);
+  }
 }

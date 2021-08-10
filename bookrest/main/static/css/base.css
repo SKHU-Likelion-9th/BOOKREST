@@ -21,7 +21,6 @@ a {
   position: sticky;
   top: 0px;
   z-index: 2;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,10 +43,10 @@ a {
 
 .nav__menu__link {
   position: relative;
-
-  font-size: 14px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 13px;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .nav__menu__link::before {
@@ -110,8 +109,4 @@ a {
   padding-bottom: 16px;
   font-size: 15px;
   color: #b0b8c1;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> merge/category

@@ -38,9 +38,6 @@ def noticeBase(request):
     return render(request, 'noticeBase.html')
 
 
-def rule(request):
-    return render(request, 'rule.html')
-
 def detail(request, id):
     book = get_object_or_404(BookClassInfo, id = id)
     return render(request, 'detail.html', {'book':book})
