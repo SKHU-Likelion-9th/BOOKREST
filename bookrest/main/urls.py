@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = [
     path("", views.main, name="main"),
-    path("introduce", views.introduce, name="introduce"),
+    path("noticeBase", views.noticeBase, name="noticeBase"),
     path("rule", views.rule, name="rule"),
 ]

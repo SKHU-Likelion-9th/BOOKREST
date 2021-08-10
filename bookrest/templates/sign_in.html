@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<link rel="stylesheet" href="{% static 'css/sign_in.css' %}" />
+<link rel="stylesheet" href="{% static 'css/sign_in.css'%}" />
 
-<form id="signinForm" class="signinForm">
+<form id="signinForm" class="signinForm" method="POST" action="{% url 'sign_in' %}">
   <div class="signinBoxTool">
     <div class="signinBoxTool__signinBox">
       <div class="signinBoxTool__signinBox__summary">
@@ -13,7 +13,7 @@
           <div class="signinBoxTool__signinBox__form-control__title">
             <span>이메일</span>
           </div>
-          <input type="text" class="email input" placeholder="Enter Email" />
+          <input type="text" class="email input" name="email" placeholder="Enter Email" />
           <small>Error message</small>
         </div>
 
@@ -25,6 +25,7 @@
             type="password"
             class="password input"
             placeholder="Enter password"
+            name="password1"
           />
           <small>Error message</small>
         </div>
@@ -55,7 +56,7 @@
           <span>아직 계정이 없으신가요?</span> <a href="{% url 'sign_up' %}">Sign up</a>
         </div>
         <div class="signinBoxTool__signinBox__summary__link__rule">
-          <span>BOOKREST 규정을 확인하세요.</span> <a href="{% url 'introduce' %}">Click me</a>
+          <span>BOOKREST 규정을 확인하세요.</span> <a href="{% url 'noticeBase' %}">Click me</a>
 
         </div>
         </div>
@@ -64,5 +65,5 @@
     </div>
   </div>
 </form>
-<script src="{% static 'js/signin.js '%}"></script>
+<script src="{% static 'js/signin.js'%}"></script>
 {% endblock %}

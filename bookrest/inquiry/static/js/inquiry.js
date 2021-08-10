@@ -1,34 +1,31 @@
-const introduce = document.querySelector(".js-introduce");
-const rule = document.querySelector(".js-rule");
-const bookrestMap = document.querySelector(".js-bookrestMap");
-const rule2 = document.querySelector(".js-rule2");
-const faq = document.querySelector(".js-faq");
+// const inquiry = document.querySelector(".js-inquiry");
+// const inquiryList = document.querySelector(".js-inquiryList");
 
-const introduceA = document.querySelector(".js-introduceA");
-const ruleA = document.querySelector(".js-ruleA");
-const bookrestMapA = document.querySelector(".js-bookrestMapA");
-const faqA = document.querySelector(".js-faqA");
 
-const NOTICESHOWING_CN = "noticeShowing";
-const INTRODUCESHOW = "introduceShow";
+// const inquiryA = document.querySelector(".js-inquiryA");
+// const inquiryListA = document.querySelector(".js-inquiryListA");
 
-const elementList = [introduce, rule, bookrestMap, faq];
-let currentIndex = 0;
-let beforeIndex = 0;
-const elementLinkList = [introduceA, ruleA, bookrestMapA, faqA];
 
-const addClassNameToCurrentElement = (index) => {
-  elementList[beforeIndex].classList.remove(NOTICESHOWING_CN);
-  elementList[index].classList.add(NOTICESHOWING_CN);
-  beforeIndex = index;
-};
+// const NOTICESHOWING_CN = "noticeShowing";
+// const INTRODUCESHOW = "introduceShow";
 
-const inquiryInit = () => {
-  elementLinkList.map((link, index) => {
-    link.addEventListener("click", () => {
-      addClassNameToCurrentElement(index);
-    });
-  });
-};
+// const elementList = [inquiry, inquiryList];
+// let currentIndex = 0;
+// let beforeIndex = 0;
+// const elementLinkList = [inquiryA, inquiryListA];
 
-inquiryInit();
+// const addClassNameToCurrentElement = (index) => {
+//   elementList[beforeIndex].classList.remove(NOTICESHOWING_CN);
+//   elementList[index].classList.add(NOTICESHOWING_CN);
+//   beforeIndex = index;
+// };
+
+// const inquiryInit = () => {
+//   elementLinkList.map((link, index) => {
+//     link.addEventListener("click", () => {
+//       addClassNameToCurrentElement(index);
+//     });
+//   });
+// };
+
+// inquiryInit();

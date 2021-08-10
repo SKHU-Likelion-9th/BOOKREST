@@ -26,6 +26,7 @@
 
 const animationTarget = document.querySelectorAll(".js-scroll");
 const SCROLLANIMATE_CN = "scroll--animate";
+const body = document.querySelector("body");
 
 const handleScroll = () => {
     for (let item of animationTarget) {
@@ -40,7 +41,7 @@ const handleScroll = () => {
 };
 
 const scrollInit = () => {
-    window.addEventListener("scroll", handleScroll);
+    body.addEventListener("scroll", handleScroll);
 };
 
 scrollInit();

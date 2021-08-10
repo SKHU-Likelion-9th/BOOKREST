@@ -40,7 +40,6 @@ class UserManager(BaseUserManager):
 class CustomUser(AbstractBaseUser, PermissionsMixin):
    
     objects = UserManager()
-    #user_id = models.BigIntegerField(primary_key=True,null=False)
     email = models.EmailField(max_length=60, unique=True)
     username = models.CharField(max_length=20, unique=True, null=True)
     major = models.CharField(choices=MAJOR, max_length=30, null=True)

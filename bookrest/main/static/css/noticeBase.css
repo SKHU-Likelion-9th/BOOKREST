@@ -67,6 +67,7 @@
   justify-content: center;
 }
 
+
 .noticeTool__summaryTool__box {
   position: absolute;
   display: flex;
@@ -159,51 +160,6 @@ details[open] ~ * {
   font-family: "Noto Sans KR", sans-serif;
   height: auto;
 
-}
-.noticeTool__summaryTool__box__inquiryForm{
-  margin-top: 3%;
-}
-.noticeTool__summaryTool__box__inquiryForm > textarea{
-  all: unset;
-  margin-top: 10px;
-  font-family: "Noto Sans KR", sans-serif;
-  padding: 2px 0px 2px;
-  background: #eaeff1;
-  border: 1px solid #adadad;
-  width: 100%;
-  height: 40px;
-  overflow: auto;
-  opacity: 0.9;
-}
-
-
-.noticeTool__summaryTool__box__inquiryForm > p{
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-
-.noticeTool__summaryTool__box__inquiryForm > button {
-  all: unset;
-  width: 200px;
-  height: 50px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  opacity: 0.8;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 600;
-  margin-right: 15px;
-  float: right;
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: #BEF31A;
-  color: #000;
-  transition: all 0.3s;
 }
 
 

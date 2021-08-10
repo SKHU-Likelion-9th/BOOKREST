@@ -2,12 +2,13 @@ from django.shortcuts import redirect, render
 from django.contrib import auth
 from django.contrib.auth.forms import AuthenticationForm  # 로그인, 회원가입 폼
 from .forms import UserCreationForm
+from .models import CustomUser
 # Create your views here.
 
 
-def mypage(request):  # 마이페이지
-    return render(request, 'mypage.html')
-
+def mypage(request, user_id):  # 마이페이지
+    user = CustomUser.objects.get(username=user_id)
+    return render(request, 'mypage.html', {'user': user})
 
 def sign_up(request):  # 회원가입
     context = {}
