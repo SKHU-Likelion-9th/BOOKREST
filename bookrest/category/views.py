@@ -5,9 +5,6 @@ from .models import BookClassInfo
 from join.models import CustomUser
 from django.core.paginator import Paginator
 
-# Create your views here.
-# 검색과 페이징
-# Create your views here.
 # 검색과 페이징
 def category(request):
     

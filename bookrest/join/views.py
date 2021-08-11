@@ -24,7 +24,6 @@ def sign_up(request):  # 회원가입
             return redirect('main')
         else:
             context['signup_form'] = form
-            # return render(request, 'sign_up.html', {'form':form})
     else:  # get 방식
         form = UserCreationForm()
         context['signup_form'] = form
@@ -32,23 +31,7 @@ def sign_up(request):  # 회원가입
 
 
 def sign_in(request):  # 로그인
-    # if request.method == 'POST':
-    #     email = request.POST['email']
-    #     password = request.POST['password']
-    #     user = authenticate(request, email=email, password=password)
-    #     if user is not None:
-    #         login(request, user)
-    #         return redirect('main')                
-    #     else:
-    #         return render(request, 'sign_in.html', {'error': 'username or password is incorrect.'})
-    # else:
-    #     return render(request, 'category.html')
-    context = {}
     if request.method == 'POST':  # Post 방식
-        # form = AuthenticationForm(request=request, data=request.POST)
-        # if form.is_valid():
-        #     username = form.cleaned_data('username')
-        #     password = form.cleaned_data('password')
         email = request.POST['email']
         password = request.POST['password']
         user = authenticate(request, email=email, password=password)
@@ -58,9 +41,6 @@ def sign_in(request):  # 로그인
         else:
             return render(request, 'sign_in.html', {'error': 'username or password is incorrect.'})
     else:
-        # return redirect('category')
-        # form = AuthenticationForm()
-        # context['signin_form'] = form
         return render(request, 'sign_in.html')
 
 def sign_out(request):  # 로그아웃
