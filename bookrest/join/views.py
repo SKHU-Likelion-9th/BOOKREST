@@ -56,7 +56,7 @@ def sign_in(request):  # 로그인
             auth.login(request, user)
             return redirect('main')
         else:
-            return render(request, 'sign_in.html')
+            return render(request, 'sign_in.html', {'error': 'username or password is incorrect.'})
     else:
         # return redirect('category')
         # form = AuthenticationForm()

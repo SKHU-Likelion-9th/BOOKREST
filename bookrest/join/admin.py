@@ -1,11 +1,10 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .forms import UserCreationForm, UserChangeForm
+from .forms import UserCreationForm
 from .models import CustomUser
 # Register your models here.
 
 class UserAdmin(BaseUserAdmin):
-    form = UserChangeForm #변경
     add_form = UserCreationForm #생성
  
     #admin에서 어떤 필드 보여줄지 
