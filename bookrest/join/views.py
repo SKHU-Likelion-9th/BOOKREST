@@ -1,13 +1,14 @@
 from django.shortcuts import redirect, render
 from django.contrib import auth
-from django.contrib.auth.forms import AuthenticationForm  # 로그인, 회원가입 폼
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate
 from .forms import UserCreationForm
-from .models import CustomUser
+from django.http import HttpResponse
 # Create your views here.
 
 
 def mypage(request):  # 마이페이지
-    # user = CustomUser.objects.get(username=user_id)
     return render(request, 'mypage.html')
 
 def sign_up(request):  # 회원가입
@@ -31,18 +32,36 @@ def sign_up(request):  # 회원가입
 
 
 def sign_in(request):  # 로그인
-    if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
+    # if request.method == 'POST':
+    #     email = request.POST['email']
+    #     password = request.POST['password']
+    #     user = authenticate(request, email=email, password=password)
+    #     if user is not None:
+    #         login(request, user)
+    #         return redirect('main')                
+    #     else:
+    #         return render(request, 'sign_in.html', {'error': 'username or password is incorrect.'})
+    # else:
+    #     return render(request, 'category.html')
+    context = {}
+    if request.method == 'POST':  # Post 방식
+        # form = AuthenticationForm(request=request, data=request.POST)
+        # if form.is_valid():
+        #     username = form.cleaned_data('username')
+        #     password = form.cleaned_data('password')
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
             auth.login(request, user)
             return redirect('main')
         else:
-            return render(request, 'sign_in.html', {'form': form})
+            return render(request, 'sign_in.html')
     else:
-        form = AuthenticationForm()
-        return render(request, 'sign_in.html', {'form': form})
-
+        # return redirect('category')
+        # form = AuthenticationForm()
+        # context['signin_form'] = form
+        return render(request, 'sign_in.html')
 
 def sign_out(request):  # 로그아웃
     auth.logout(request)

@@ -3,12 +3,13 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/mypage.css'%}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<h4>마이페이지</h4>
 
 <div class="my_page_background">
-
+    <div class="mypage__title">
+        <h4>Mypage</h4>
+        </div>
     <div class="user_info">
-        <h4 class="user_welcome">오늘도 즐겁고 행복한 하루 보내세요!</h4>
+        <h4 class="user_welcome">{{ user.username }}님 오늘도 즐겁고 행복한 하루 보내세요!</h4>
     </div>
 
     <div class="alarm">
@@ -20,9 +21,8 @@
             
             <div class="alarm_list">
                 <span class="alarm_title">관리자</span>
-                <span class="alarm_text">대여하셨던 "점프 투 파이썬"이 7/31부로 반납처리 되었습니다.</span>
+                <span class="alarm_text">대여하셨던 <b>"점프 투 파이썬"</b>이 7/31부로 반납처리 되었습니다.</span>
             </div>
-
             <div class="alarm_list">
                 <span class="alarm_title">관리자</span>
                 <span class="alarm_text">문의하신 질문의 답변이 완료되었습니다. 문의하기 페이지를 확인해주세요.</span>
@@ -40,12 +40,12 @@
             
             <div class="book_list">
                 <div class="book_img">
-                <img src="{% static 'img/pythonbook.jpg '%}"/>
+                <img src="{% static 'img/mypagebook9.jpg '%}"/>
                 <br>
                 </div>
                 <div class="book_info">
                     <span class="title">
-                        <h4 class="col_title">책제목</h4><br>점프 투 파이썬
+                        <h4 class="col_title">책제목</h4><br>인문학도, 개발자되다
                     </span>
                     <span class="rental_date">
                         <h4 class="col_title">대여일</h4><br>2021/08/14
@@ -65,7 +65,7 @@
 
             <div class="book_list">
                 <div class="book_img">
-                <img src="{% static 'img/book2.jpg '%}"/>
+                <img src="{% static 'img/mypagebook2.jpg '%}"/>
                 <br>
                 </div>
                 <div class="book_info">
@@ -90,7 +90,7 @@
 
             <div class="book_list">
                 <div class="book_img">
-                <img src="{% static 'img/book3.jpg '%}"/>
+                <img src="{% static 'img/mypagebook3.jpg '%}"/>
                 <br>
                 </div>
                 <div class="book_info">
@@ -115,7 +115,7 @@
 
             <div class="book_list">
                 <div class="book_img">
-                <img src="{% static 'img/book4.jpg '%}"/>
+                <img src="{% static 'img/mypagebook4.jpg '%}"/>
                 <br>
                 </div>
                 <div class="book_info">
@@ -140,7 +140,7 @@
 
             <div class="book_list">
                 <div class="book_img">
-                <img src="{% static 'img/book5.jpg '%}"/>
+                <img src="{% static 'img/mypagebook5.jpg '%}"/>
                 <br>
                 </div>
                 <div class="book_info">
@@ -190,10 +190,10 @@
                 </div>
 
                 <div class="book_list">
-                    <span class="title">디지털 영상 촬영과 편집</span>
-                    <span class="major">미컨</span>
-                    <span class="author">안세영</span>
-                    <span class="publisher">차송</span>
+                    <span class="title">단박에 한국사</span>
+                    <span class="major">인문</span>
+                    <span class="author">심용환</span>
+                    <span class="publisher">위즈덤하우스</span>
                     <span class="professor">김용찬</span>
                     <span class="class">디지털영상촬영Ⅰ</span>
                     <span class="star_img"><img src="{% static 'img/star_onclick.png '%}"/></span>
