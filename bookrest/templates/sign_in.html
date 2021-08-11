@@ -1,7 +1,13 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'css/sign_in.css'%}" />
 
-<form id="signinForm" class="signinForm" method="POST" action="{% url 'sign_in' %}">
+<form method="POST" action="{% url 'sign_in' %}" >
+  {% csrf_token %}
+  <input type="text" name="email" placeholder="email">
+  <input type="password" name="password" placeholder="password">
+  <button type="submit">제출</button>
+</form> 
+<!-- <form method="POST" action="{% url 'sign_in' %}" id="signinForm" class="signinForm">
   {% csrf_token %}
   <div class="signinBoxTool">
     <div class="signinBoxTool__signinBox">
@@ -14,7 +20,7 @@
           <div class="signinBoxTool__signinBox__form-control__title">
             <span>이메일</span>
           </div>
-          <input type="text" class="email input" name="username" placeholder="Enter Email" />
+          <input type="text" class="email input" name="email" placeholder="Enter Email" />
           <small>Error message</small>
         </div>
 
@@ -65,6 +71,6 @@
       </div>
     </div>
   </div>
-</form>
-<script src="{% static 'js/signin.js'%}"></script>
+</form> -->
+<script src="{% static 'js/signin.js' %}"></script>
 {% endblock %}

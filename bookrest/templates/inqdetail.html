@@ -10,7 +10,7 @@
 <div class="inquiry__editTool__Big">
 <div class="inquiry__editTool">
 <h2>{{inquiry.title}}</h2>
-<p>작성자 : <b>{{inquiry.last_name}} {{inquiry.first_name}}</b></p>
+<!-- <p>작성자 : <b>{{inquiry.last_name}} {{inquiry.first_name}}</b></p> -->
 <p>작성 시간 : {{inquiry.pub_date}}</p>
 {% for qtype in inquiry.qtype.all %}
 <p>문의 유형 : {{qtype.type}}</p>
