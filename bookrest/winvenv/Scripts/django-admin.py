@@ -1,4 +1,4 @@
-#!/Users/kimjiin/Desktop/BOOKREST/myvenv/bin/python3
+#!C:\Users\한슬희\Desktop\BOOKREST\winvenv\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
