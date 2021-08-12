@@ -16,11 +16,14 @@ def getvote(request, pk):
         return HttpResponse('로그인을 해주세요')
 
     booklist = get_object_or_404(BookList, pk = pk)
+    vote =  get_object_or_404(Vote, pk = pk)
     user = request.user
+
     if booklist.votes.filter(id = user.id).exists():
         return HttpResponse('이미 투표를 했습니다')
     else:
         booklist.votes += 1
+        booklist.save()
     
     return redirect('getvote')
     

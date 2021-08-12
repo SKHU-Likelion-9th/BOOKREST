@@ -2,8 +2,11 @@ from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser, PermissionsMixin
 )
+from django.db.models.deletion import CASCADE
+from django.db.models.fields.related import ForeignKey
 from django.utils import timezone
 from .choices import *
+from vote.models import BookList
 
 # Create your models here.
 class UserManager(BaseUserManager):    
@@ -46,6 +49,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     major = models.CharField(choices=MAJOR, max_length=30, null=True)
     phone_number = models.CharField(max_length=20, null=True)
     student_id = models.CharField(max_length=20, null=True)
+    #vote
+    vote = models.ForeignKey(BookList, on_delete=CASCADE, null=True, related_name='user')
     #no_borrow_period
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
