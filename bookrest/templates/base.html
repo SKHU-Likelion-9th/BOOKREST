@@ -40,7 +40,6 @@
           data-path="/inquiry/"
           >문의하기</a
         >
-
         {% if user.is_active %}
         <a
           class="nav__menu__link js-nav__menu__link"
@@ -50,23 +49,22 @@
         <a
           class="nav__menu__link js-nav__menu__link"
           href="{% url 'mypage' %}"
-          data-path="/mypage/"
+          data-path="/join/mypage/"
           >{{ user.username }}님 안녕하세요.</a
         >
         {% else %}
         <a
           class="nav__menu__link js-nav__menu__link"
           href="{% url 'sign_up' %}"
-          data-path="/join/sign_up"
+          data-path="/join/sign_up/"
           >회원가입</a
         >
         <a
           class="nav__menu__link js-nav__menu__link"
           href="{% url 'sign_in' %}"
-          data-path="/join/sign_in"
+          data-path="/join/sign_in/"
           >로그인</a
         >
-
         {% endif %}
       </div>
     </div>
