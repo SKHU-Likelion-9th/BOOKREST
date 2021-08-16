@@ -1,4 +1,5 @@
 ## BOOKREST
+![9th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge)
 
 🌳 전공 서적 대여 서비스
 
